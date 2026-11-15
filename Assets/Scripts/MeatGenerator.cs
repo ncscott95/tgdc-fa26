@@ -38,6 +38,22 @@ public class MeatGenerator : MonoBehaviour
         Transform newMeat = Instantiate(_basePrefab).transform;
         newMeat.position = _spawnPoint.position;
 
+        PhysicsMaterial2D newMaterial = new PhysicsMaterial2D("NodeMaterial")
+        {
+            friction = 0.5f,
+            bounciness = 0f,
+            frictionCombine = PhysicsMaterialCombine2D.Average,
+            bounceCombine = PhysicsMaterialCombine2D.Average
+        };
+
+        foreach (Trait trait in data.Traits)
+        {
+            if (trait is IPhysicsMaterialBehavior physicsTrait)
+            {
+                physicsTrait.Invoke(newMaterial);
+            }
+        }
+
         for (int i = 0; i < numNodes; i++)
         {
             Transform newNode = Instantiate(_nodePrefab, newMeat).transform;
@@ -45,9 +61,26 @@ public class MeatGenerator : MonoBehaviour
 
             CircleCollider2D newCollider = newNode.GetComponent<CircleCollider2D>();
             newCollider.radius = BaseNodeColliderRadius / (numNodes / 4f); // arbitrary amount to shrink with more nodes
+            newCollider.sharedMaterial = newMaterial;
+
+            Rigidbody2D newRb = newNode.GetComponent<Rigidbody2D>();
+            newRb.sharedMaterial = newMaterial;
+
+            foreach (Trait trait in data.Traits)
+            {
+                if (trait is ISizeBehavior sizeTrait)
+                {
+                    newCollider.radius *= sizeTrait.RadiusMultiplier;
+                }
+
+                if (trait is IMassBehavior massTrait)
+                {
+                    newRb.mass *= massTrait.MassMultiplier;
+                }
+            }
 
             nodes.Add(newNode);
-            rigidbodies.Add(newNode.GetComponent<Rigidbody2D>());
+            rigidbodies.Add(newRb);
             colliders.Add(newCollider);
         }
 
@@ -105,6 +138,7 @@ public class MeatGenerator : MonoBehaviour
         softSprite.Initialize(nodes, eyeRenderers, tangentScale, data.TextureUVOffset);
 
         Steak steak = newMeat.GetComponent<Steak>();
+        steak.SetData(data);
         return steak;
     }
 
@@ -112,8 +146,8 @@ public class MeatGenerator : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            // InstantiateSteak(NewSteakData());
-            InstantiateSteak(_testData);
+            InstantiateSteak(new SteakData());
+            // InstantiateSteak(_testData);
         }
     }
 }

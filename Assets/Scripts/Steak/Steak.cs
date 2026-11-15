@@ -2,9 +2,26 @@ using UnityEngine;
 
 public class Steak : MonoBehaviour
 {
+    public SteakData Data { get; private set; }
     [SerializeField] private Rigidbody2D _rb;
     private const float DRAG_SPEED = 30f;
     private const float DRAG_RADIUS = 5f;
+
+    void FixedUpdate()
+    {
+        foreach (Trait trait in Data.Traits)
+        {
+            if (trait is IUpdateBehavior updateTrait)
+            {
+                updateTrait.Invoke(_rb);
+            }
+        }
+    }
+
+    public void SetData(SteakData data)
+    {
+        Data = data;
+    }
 
     public void Click()
     {
