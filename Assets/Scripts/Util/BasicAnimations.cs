@@ -51,6 +51,14 @@ public static class BasicAnimations
             : Mathf.Pow(2f, -10f * t) * Mathf.Sin((t * 10f - 0.75f) * C4) + 1f;
     }
 
+    public static float EaseOutElasticWeak(float t) {
+        return t == 0f
+            ? 0f
+            : t == 1f
+            ? 1f
+            : Mathf.Pow(2f, -10f * t) * (Mathf.Sin((t * 10f - 0.75f) * C4) * 0.2f) + 1f;
+    }
+
     public static float EaseInBack(float t) {
         float c1 = 1.70158f;
         float c3 = c1 + 1;
