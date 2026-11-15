@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public enum SceneType
 {
-    Farm
+    Farm,
+    LevelSelect
 }
 
 public class SceneLoader : Singleton<SceneLoader>
 {
+    [SerializeField] private Transition transition;
     private List<SceneType> loadedScenes = new List<SceneType>();
+    private Coroutine changeSceneRoutine;
 
     public void AddScene(SceneType sceneType)
     {
@@ -23,12 +26,24 @@ public class SceneLoader : Singleton<SceneLoader>
         StartCoroutine(UnloadSceneRoutine(sceneType));
     }
 
-    public void LoadMainMenu()
+    public void ChangeScene(SceneType newScene)
     {
+        if (changeSceneRoutine != null) StopCoroutine(changeSceneRoutine);
+        changeSceneRoutine = StartCoroutine(ChangeSceneRoutine(newScene));
+    }
+
+    public IEnumerator ChangeSceneRoutine(SceneType newScene)
+    {
+        yield return transition.FadeIn();
+
         foreach (SceneType sceneType in loadedScenes)
         {
             UnloadScene(sceneType);
         }
+
+        AddScene(newScene);
+
+        yield return transition.FadeOut();
     }
 
     private IEnumerator UnloadSceneRoutine(SceneType sceneType)
