@@ -127,6 +127,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1729362446}
     m_Modifications:
+    - target: {fileID: 6672150919163953327, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_text
+      value: back
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 74309821}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeSceneButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
       value: Back Button
@@ -157,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 224.1
       objectReference: {fileID: 0}
     - target: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 101.1
       objectReference: {fileID: 0}
     - target: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,13 +246,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74309821}
   m_SourcePrefab: {fileID: 100100000, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
 --- !u!224 &74309819 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 74309818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &74309820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 74309818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &74309821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74309820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0a5ef7ce8303d42a9d5cd7e5837c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
+  sceneType: 0
 --- !u!1 &426367048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1548,10 @@ PrefabInstance:
     - target: {fileID: 3376274226079247145, guid: 48137b71579c67f459c9dc6f10713f25, type: 3}
       propertyPath: m_Name
       value: Race Details Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376274226079247145, guid: 48137b71579c67f459c9dc6f10713f25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771953126777420164, guid: 48137b71579c67f459c9dc6f10713f25, type: 3}
       propertyPath: m_Pivot.x

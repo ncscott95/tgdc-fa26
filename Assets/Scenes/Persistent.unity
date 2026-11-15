@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662922339727a1b43a301f5775205e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  transition: {fileID: 0}
+  transition: {fileID: 1123868217}
 --- !u!1 &1871270015
 GameObject:
   m_ObjectHideFlags: 0

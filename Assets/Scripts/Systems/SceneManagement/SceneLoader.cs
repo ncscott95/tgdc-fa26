@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,21 @@ public class SceneLoader : Singleton<SceneLoader>
     [SerializeField] private Transition transition;
     private List<SceneType> loadedScenes = new List<SceneType>();
     private Coroutine changeSceneRoutine;
+
+    void Start()
+    {
+        int count = SceneManager.sceneCount;
+
+        for (int i = 0; i < count; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            SceneType sceneType;
+            if (Enum.TryParse(scene.name, true, out sceneType))
+            {
+                loadedScenes.Add(sceneType);
+            }
+        }
+    }
 
     public void AddScene(SceneType sceneType)
     {
