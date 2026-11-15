@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,8 @@ public class MeatGenerator : MonoBehaviour
     private const float BaseTangentScale = 0.15f;
     private const int MinNodes = 6;
     private const int MaxNodes = 12; // Inclusive
+    private const float SpringDampingRatio = 0.5f;
+    private const float SpringFrequency = 8.5f;
 
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject _basePrefab;
@@ -50,12 +53,22 @@ public class MeatGenerator : MonoBehaviour
         for (int i = 0; i < numNodes; i++)
         {
             Transform node = nodes[i];
-            SpringJoint2D[] springs = node.GetComponents<SpringJoint2D>();
-            springs[0].connectedBody = centerRb;
-            springs[1].connectedBody = rigidbodies[(i + 1) % numNodes];
 
-            springs[0].enabled = true;
-            springs[1].enabled = true;
+            for (int j = 0; j < numNodes; j++)
+            {
+                SpringJoint2D spring = node.AddComponent<SpringJoint2D>();
+
+                spring.dampingRatio = SpringDampingRatio;
+                spring.frequency = SpringFrequency;
+                if (j == 0)
+                {
+                    spring.connectedBody = centerRb;
+                }
+                else
+                {
+                    spring.connectedBody = rigidbodies[(i + j) % numNodes];
+                }
+            }
 
             colliders[i].enabled = true;
         }

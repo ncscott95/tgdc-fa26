@@ -3,7 +3,7 @@ using UnityEngine;
 public class Steak : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb;
-    private const float DRAG_SPEED = 20f;
+    private const float DRAG_SPEED = 30f;
     private const float DRAG_RADIUS = 5f;
 
     public void Click()
