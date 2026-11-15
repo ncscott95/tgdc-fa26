@@ -13,7 +13,7 @@ public class SoftbodySpriteShape : MonoBehaviour,
 {
     private const float SplineOffset = 0.5f;
     private const float SplineHeight = 0.1f;
-    private const int MaxPoints = 32; // Must match HLSL array size
+    private const int MaxPoints = 32; // must match HLSL array size
     private const float BlinkDuration = 0.2f;
     private const float MinBlinkWait = 17f;
     private const float MaxBlinkWait = 10f;
@@ -21,11 +21,9 @@ public class SoftbodySpriteShape : MonoBehaviour,
     [SerializeField] private List<Transform> _nodes;
     [SerializeField] private Steak _steak;
     [SerializeField] private PolygonCollider2D _polygonCollider;
-    [SerializeField] private Transform _center;
     [SerializeField] private Sprite _eyeOpenSprite;
     [SerializeField] private Sprite _eyeClosedSprite;
 
-    private float _tangentScale = 0.15f;
     private SpriteShapeController _controller;
     private SpriteShapeRenderer _renderer;
     private MaterialPropertyBlock _propBlock;
@@ -34,24 +32,14 @@ public class SoftbodySpriteShape : MonoBehaviour,
     private CircleCollider2D[] _colliders;
     private Vector2 _randomUVOffset;
     private bool _isInitialized = false;
-    private List<SpriteRenderer> _eyes;
 
     void Awake()
     {
         _controller = GetComponentInChildren<SpriteShapeController>();
         _renderer = GetComponentInChildren<SpriteShapeRenderer>();
         _propBlock = new MaterialPropertyBlock();
-        _colliders = new CircleCollider2D[_nodes.Count];
 
         _renderer.enabled = false;
-
-        // for (int i = 0; i < _nodes.Count; i++)
-        // {
-        //     _colliders[i] = _nodes[i].GetComponent<CircleCollider2D>();
-        // }
-
-        // InitializeVertices();
-        // UpdateVertices();
     }
 
     void Update()
@@ -60,32 +48,18 @@ public class SoftbodySpriteShape : MonoBehaviour,
         UpdateVertices();
     }
 
-    public void SetPoints(List<Transform> reversePoints)
+    public void Initialize(List<Transform> reversePoints, List<SpriteRenderer> eyeRenderers, float tangentScale, Vector2 uvOffset)
     {
         _nodes = reversePoints;
         _nodes.Reverse();
+        _controller.spline.Clear();
         _colliders = new CircleCollider2D[_nodes.Count];
 
         for (int i = 0; i < _nodes.Count; i++)
         {
             _colliders[i] = _nodes[i].GetComponent<CircleCollider2D>();
         }
-    }
 
-    public void SetTangentScale(float scale)
-    {
-        _tangentScale = scale;
-    }
-
-    public void SetEyes(List<SpriteRenderer> eyes)
-    {
-        _eyes = eyes;
-    }
-
-    public void Initialize()
-    {
-        _controller.spline.Clear();
-        float angle = 2f * Mathf.PI / _nodes.Count;
         for (int i = 0; i < _nodes.Count; i++)
         {
             Transform node = _nodes[i];
@@ -93,7 +67,7 @@ public class SoftbodySpriteShape : MonoBehaviour,
             _controller.spline.InsertPointAt(i, position);
             _controller.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
 
-            Vector2 rightTangent = Vector2.Perpendicular(-position.normalized) * _tangentScale;
+            Vector2 rightTangent = Vector2.Perpendicular(-position.normalized) * tangentScale;
             _controller.spline.SetRightTangent(i, rightTangent);
             _controller.spline.SetLeftTangent(i, -rightTangent);
             _controller.spline.SetHeight(i, SplineHeight);
@@ -104,11 +78,11 @@ public class SoftbodySpriteShape : MonoBehaviour,
             _restPositions[i] = new Vector4(restPos.x, restPos.y, 0, 0);
         }
 
-        _randomUVOffset = new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f));
+        _randomUVOffset = uvOffset;
         _renderer.enabled = true;
         _isInitialized = true;
 
-        foreach (SpriteRenderer eye in _eyes)
+        foreach (SpriteRenderer eye in eyeRenderers)
         {
             StartCoroutine(BlinkCoroutine(eye, Random.Range(0f, MinBlinkWait)));
         }
