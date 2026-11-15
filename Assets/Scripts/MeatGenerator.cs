@@ -11,12 +11,15 @@ public class MeatGenerator : MonoBehaviour
     private const float BaseTangentScale = 0.15f;
     private const int MinNodes = 6;
     private const int MaxNodes = 12; // Inclusive
-    private const float SpringDampingRatio = 0.5f;
-    private const float SpringFrequency = 8.5f;
+    private const float SpringDampingRatio = 0.0f;
+    private const float SpringFrequency = 8f;
+    private const float EyePositionRandomRadius = 0.1f;
+    private const float EyeSpringFrequency = 3f;
 
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject _basePrefab;
     [SerializeField] private GameObject _nodePrefab;
+    [SerializeField] private GameObject _eyePrefab;
 
     public void GenerateMeat()
     {
@@ -32,6 +35,7 @@ public class MeatGenerator : MonoBehaviour
         Transform newMeat = Instantiate(_basePrefab).transform;
         newMeat.position = _spawnPoint.position;
 
+        // apply random offsets to perimeter nodes
         for (int i = 0; i < numNodes; i++)
         {
             Transform newNode = Instantiate(_nodePrefab, newMeat).transform;
@@ -50,6 +54,7 @@ public class MeatGenerator : MonoBehaviour
 
         Rigidbody2D centerRb = newMeat.GetComponent<Rigidbody2D>();
 
+        // connect all perimeter nodes to every other node with springs
         for (int i = 0; i < numNodes; i++)
         {
             Transform node = nodes[i];
@@ -73,10 +78,34 @@ public class MeatGenerator : MonoBehaviour
             colliders[i].enabled = true;
         }
 
+        // place eyes randomly within a circle, anchor with springs
+        Transform eyeContainer = newMeat.Find("EyeContainer");
+        Transform eye = Instantiate(_eyePrefab, eyeContainer).transform;
+
+        float eyePosRadius = EyePositionRandomRadius * Mathf.Sqrt(Random.value);
+        float eyePosTheta = Random.value * 2 * Mathf.PI;
+        eyeContainer.localPosition = new Vector2(eyePosRadius * Mathf.Cos(eyePosTheta), eyePosRadius * Mathf.Sin(eyePosTheta));
+        eyeContainer.Rotate(Vector3.forward, Random.Range(0f, 360f));
+
+        List<SpriteRenderer> eyeRenderers = new List<SpriteRenderer>();
+
+        foreach (Rigidbody2D node in rigidbodies)
+        {
+            SpringJoint2D spring = eye.AddComponent<SpringJoint2D>();
+            // spring.dampingRatio = SpringDampingRatio;
+            spring.dampingRatio = 0f;
+            spring.frequency = EyeSpringFrequency;
+            spring.connectedBody = node;
+        }
+
+        eyeRenderers.Add(eye.GetComponent<SpriteRenderer>());
+
+        // initialize all fields
         SoftbodySpriteShape softSprite = newMeat.GetComponent<SoftbodySpriteShape>();
         softSprite.SetTangentScale(BaseTangentScale / (numNodes / 6f)); // arbitrary amount to shrink with more nodes
         softSprite.SetPoints(nodes);
-        softSprite.InitializeVertices();
+        softSprite.SetEyes(eyeRenderers);
+        softSprite.Initialize();
     }
 
     void Update()
