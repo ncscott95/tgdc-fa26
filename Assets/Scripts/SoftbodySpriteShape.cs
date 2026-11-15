@@ -1,14 +1,23 @@
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 
-public class SoftbodySpriteShape : MonoBehaviour
+public class SoftbodySpriteShape : MonoBehaviour, 
+    IPointerClickHandler, 
+    IPointerEnterHandler,
+    IPointerExitHandler,
+    IDragHandler,
+    IEndDragHandler
 {
     private const float SplineOffset = 0.5f;
     private const float SplineHeight = 0.1f;
     private const float TangentScale = 0.15f;
     private const int MaxPoints = 32; // Must match HLSL array size
 
+    [SerializeField] private Steak _steak;
     [SerializeField] private SpriteShapeController _spriteShapeController;
+    [SerializeField] private PolygonCollider2D _polygonCollider;
     [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _center;
 
@@ -67,6 +76,11 @@ public class SoftbodySpriteShape : MonoBehaviour
     {
         int count = Mathf.Min(_points.Length, MaxPoints);
 
+        _polygonCollider.SetPath(0, _points
+            .Select(t => new Vector2(t.localPosition.x, t.localPosition.y))
+            .ToArray()
+        );
+
         for (int i = 0; i < count; i++)
         {
             Vector2 vertex = _points[i].localPosition;
@@ -101,5 +115,30 @@ public class SoftbodySpriteShape : MonoBehaviour
         _propBlock.SetVectorArray("_RestPoints", _restPositions);
         _propBlock.SetVectorArray("_CurrentPoints", _currentPositions);
         _renderer.SetPropertyBlock(_propBlock, 0);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        InteractionManager.Instance.Click(_steak);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        InteractionManager.Instance.Hover(_steak);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InteractionManager.Instance.Unhover(_steak);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        InteractionManager.Instance.Drag(_steak, eventData);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        InteractionManager.Instance.EndDrag(_steak);
     }
 }

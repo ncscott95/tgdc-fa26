@@ -1767,7 +1767,9 @@ GameObject:
   - component: {fileID: 8099425523017253570}
   - component: {fileID: 246703459660094549}
   - component: {fileID: 775621100813989824}
+  - component: {fileID: 7510952779177988059}
   - component: {fileID: 4821098351252210581}
+  - component: {fileID: 3828326350404503658}
   m_Layer: 0
   m_Name: Test Softbody 1-way
   m_TagString: Untagged
@@ -1922,6 +1924,73 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!60 &7510952779177988059
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446141073009252288}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.15234375, y: 0.47265625}
+      - {x: -0.29296875, y: 0.40234375}
+      - {x: -0.40234375, y: 0.29296875}
+      - {x: -0.47265625, y: 0.15234375}
+      - {x: -0.5, y: 0}
+      - {x: -0.47265625, y: -0.15234375}
+      - {x: -0.40234375, y: -0.29296875}
+      - {x: -0.29296875, y: -0.40234375}
+      - {x: -0.15234375, y: -0.47265625}
+      - {x: 0, y: -0.5}
+      - {x: 0.15234375, y: -0.47265625}
+      - {x: 0.29296875, y: -0.40234375}
+      - {x: 0.40234375, y: -0.29296875}
+      - {x: 0.47265625, y: -0.15234375}
+      - {x: 0.5, y: 0}
+      - {x: 0.47265625, y: 0.15234375}
+      - {x: 0.40234375, y: 0.29296875}
+      - {x: 0.29296875, y: 0.40234375}
+      - {x: 0.15234375, y: 0.47265625}
+  m_UseDelaunayMesh: 1
 --- !u!114 &4821098351252210581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +2003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dae4f2be18f604f9fd3ce4c7f1c216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoftbodySpriteShape
+  _steak: {fileID: 3828326350404503658}
   _spriteShapeController: {fileID: 7187622459146177167}
+  _polygonCollider: {fileID: 7510952779177988059}
   _points:
   - {fileID: 8520003193800187766}
   - {fileID: 7650171606976058530}
@@ -1945,6 +2016,19 @@ MonoBehaviour:
   - {fileID: 7582500876355850042}
   - {fileID: 8195347273583336933}
   _center: {fileID: 123927422352080810}
+--- !u!114 &3828326350404503658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446141073009252288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd89bf242f1f08e4c9b23cf7ae25a76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Steak
+  _rb: {fileID: 246703459660094549}
 --- !u!1 &9134780587298410892
 GameObject:
   m_ObjectHideFlags: 0
