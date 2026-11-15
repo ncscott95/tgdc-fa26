@@ -707,7 +707,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2924753732559456954}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -1873,7 +1873,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 100
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 5
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: b19f8f437f1b62b42b88064e15c466a2, type: 2}
   m_IncludeLayers:
