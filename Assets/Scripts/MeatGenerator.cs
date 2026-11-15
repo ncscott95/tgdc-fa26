@@ -23,7 +23,7 @@ public class MeatGenerator : MonoBehaviour
         _testData = new SteakData();
     }
 
-    public void InstantiateSteak(SteakData data)
+    public Steak InstantiateSteak(SteakData data)
     {
         int numNodes = data.ExteriorNodePositions.Count;
         List<Transform> nodes = new List<Transform>();
@@ -98,6 +98,9 @@ public class MeatGenerator : MonoBehaviour
         SoftbodySpriteShape softSprite = newMeat.GetComponent<SoftbodySpriteShape>();
         float tangentScale = BaseTangentScale / (numNodes / 6f); // arbitrary amount to shrink with more nodes
         softSprite.Initialize(nodes, eyeRenderers, tangentScale, data.TextureUVOffset);
+
+        Steak steak = newMeat.GetComponent<Steak>();
+        return steak;
     }
 
     void Update()
