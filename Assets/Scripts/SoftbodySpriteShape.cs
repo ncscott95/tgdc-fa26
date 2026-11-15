@@ -4,14 +4,13 @@ using UnityEngine.U2D;
 public class SoftbodySpriteShape : MonoBehaviour
 {
     private const float SplineOffset = 0.5f;
-    private const float SplineHeight = 0.4f;
+    private const float SplineHeight = 0.1f;
+    private const float TangentScale = 0.15f;
     private const int MaxPoints = 32; // Must match HLSL array size
 
     [SerializeField] private SpriteShapeController _spriteShapeController;
     [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _center;
-
-    private Material _material;
 
     private SpriteShapeRenderer _renderer;
     private MaterialPropertyBlock _propBlock;
@@ -50,7 +49,7 @@ public class SoftbodySpriteShape : MonoBehaviour
             _spriteShapeController.spline.InsertPointAt(i, position);
             _spriteShapeController.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
 
-            Vector2 rightTangent = Vector2.Perpendicular(-position.normalized) / 2f;
+            Vector2 rightTangent = Vector2.Perpendicular(-position.normalized) * TangentScale;
             _spriteShapeController.spline.SetRightTangent(i, rightTangent);
             _spriteShapeController.spline.SetLeftTangent(i, -rightTangent);
             _spriteShapeController.spline.SetHeight(i, SplineHeight);
