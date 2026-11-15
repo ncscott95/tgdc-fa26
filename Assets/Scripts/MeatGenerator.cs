@@ -18,7 +18,7 @@ public class MeatGenerator : MonoBehaviour
     [SerializeField] private GameObject _basePrefab;
     [SerializeField] private GameObject _nodePrefab;
 
-    public void GenerateMeat()
+    public Steak GenerateMeat()
     {
         // random offsets to sample into the perlin noise
         float noiseOffsetX = Random.Range(0f, 1000f);
@@ -77,6 +77,9 @@ public class MeatGenerator : MonoBehaviour
         softSprite.SetTangentScale(BaseTangentScale / (numNodes / 6f)); // arbitrary amount to shrink with more nodes
         softSprite.SetPoints(nodes);
         softSprite.InitializeVertices();
+
+        Steak steak = newMeat.GetComponent<Steak>();
+        return steak;
     }
 
     void Update()
