@@ -1,5 +1,5 @@
-using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
@@ -14,11 +14,16 @@ public class SoftbodySpriteShape : MonoBehaviour,
     private const float SplineOffset = 0.5f;
     private const float SplineHeight = 0.1f;
     private const int MaxPoints = 32; // Must match HLSL array size
+    private const float BlinkDuration = 0.2f;
+    private const float MinBlinkWait = 17f;
+    private const float MaxBlinkWait = 10f;
 
     [SerializeField] private List<Transform> _nodes;
     [SerializeField] private Steak _steak;
     [SerializeField] private PolygonCollider2D _polygonCollider;
     [SerializeField] private Transform _center;
+    [SerializeField] private Sprite _eyeOpenSprite;
+    [SerializeField] private Sprite _eyeClosedSprite;
 
     private float _tangentScale = 0.15f;
     private SpriteShapeController _controller;
@@ -29,6 +34,7 @@ public class SoftbodySpriteShape : MonoBehaviour,
     private CircleCollider2D[] _colliders;
     private Vector2 _randomUVOffset;
     private bool _isInitialized = false;
+    private List<SpriteRenderer> _eyes;
 
     void Awake()
     {
@@ -71,7 +77,12 @@ public class SoftbodySpriteShape : MonoBehaviour,
         _tangentScale = scale;
     }
 
-    public void InitializeVertices()
+    public void SetEyes(List<SpriteRenderer> eyes)
+    {
+        _eyes = eyes;
+    }
+
+    public void Initialize()
     {
         _controller.spline.Clear();
         float angle = 2f * Mathf.PI / _nodes.Count;
@@ -96,6 +107,11 @@ public class SoftbodySpriteShape : MonoBehaviour,
         _randomUVOffset = new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f));
         _renderer.enabled = true;
         _isInitialized = true;
+
+        foreach (SpriteRenderer eye in _eyes)
+        {
+            StartCoroutine(BlinkCoroutine(eye, Random.Range(0f, MinBlinkWait)));
+        }
     }
 
     private void UpdateVertices()
@@ -166,5 +182,18 @@ public class SoftbodySpriteShape : MonoBehaviour,
     public void OnEndDrag(PointerEventData eventData)
     {
         InteractionManager.Instance.EndDrag(_steak);
+    }
+
+    private IEnumerator BlinkCoroutine(SpriteRenderer eyeRenderer, float initialWait)
+    {
+        yield return new WaitForSeconds(initialWait);
+
+        while (true)
+        {
+            eyeRenderer.sprite = _eyeClosedSprite;
+            yield return new WaitForSeconds(BlinkDuration);
+            eyeRenderer.sprite = _eyeOpenSprite;
+            yield return new WaitForSeconds(Random.Range(MinBlinkWait, MaxBlinkWait));
+        }
     }
 }

@@ -79,8 +79,8 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1515093569
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -201,6 +201,37 @@ MonoBehaviour:
   m_Modifiers: []
   m_ColliderSegment: []
   m_ShadowSegment: []
+--- !u!1 &4864919705973254467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5772547992015315798}
+  m_Layer: 0
+  m_Name: EyeContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5772547992015315798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864919705973254467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 123927422352080810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6446141073009252288
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +266,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4778974187622446271}
+  - {fileID: 5772547992015315798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &246703459660094549
@@ -278,10 +310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoftbodySpriteShape
   _nodes: []
   _steak: {fileID: 1015714419444122143}
-  _spriteShapeController: {fileID: 7187622459146177167}
   _polygonCollider: {fileID: 7713636477703917610}
-  _points: []
   _center: {fileID: 123927422352080810}
+  _eyeOpenSprite: {fileID: 21300000, guid: 09f0545f3cf361747805f338175b407f, type: 3}
+  _eyeClosedSprite: {fileID: 21300000, guid: 67a7406671dd3ba488c47dfd4de291c5, type: 3}
 --- !u!114 &1015714419444122143
 MonoBehaviour:
   m_ObjectHideFlags: 0

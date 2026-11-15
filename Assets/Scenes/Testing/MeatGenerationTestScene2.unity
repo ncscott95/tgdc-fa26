@@ -256,6 +256,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 810776125}
   _basePrefab: {fileID: 6446141073009252288, guid: e8c99954c9c267043bd339c2ebe22f23, type: 3}
   _nodePrefab: {fileID: 1293069489389904850, guid: ca261c2cc6bc8ce4a8020452fdc3c243, type: 3}
+  _eyePrefab: {fileID: 5701531693035481770, guid: 6329e335a93de0446bf9cc8cfb8a8bec, type: 3}
 --- !u!1001 &523876385
 PrefabInstance:
   m_ObjectHideFlags: 0
