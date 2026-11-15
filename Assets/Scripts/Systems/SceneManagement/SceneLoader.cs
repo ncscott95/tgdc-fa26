@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public enum SceneType
 {
     Farm,
-    LevelSelect
+    LevelSelect,
+    Wager
 }
 
 public class SceneLoader : Singleton<SceneLoader>

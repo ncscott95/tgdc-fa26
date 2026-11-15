@@ -13,21 +13,26 @@ public class ConveyorBeltMeatSpawner : MonoBehaviour
     void Start()
     {
         _meats = new Queue<Steak>();
-        _generator.GenerateMeat();
-        _startTime = Time.time;
+        AddMeat();
     }
 
     void Update()
     {
         if (Time.time >= _startTime + SPAWN_INTERVAL)
         {
-            _startTime = Time.time;
-            Steak meat = _generator.GenerateMeat();
-            _meats.Enqueue(meat);
-            if (_meats.Count > MAX_MEATS)
-            {
-                Destroy(_meats.Dequeue().gameObject);
-            }
+            AddMeat();
         }
+    }
+
+    private void AddMeat()
+    {
+        Steak meat = _generator.GenerateMeat();
+        meat.transform.SetParent(transform, true);
+        _meats.Enqueue(meat);
+        if (_meats.Count > MAX_MEATS)
+        {
+            Destroy(_meats.Dequeue().gameObject);
+        }
+        _startTime = Time.time;
     }
 }

@@ -6,10 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Persistent.unity
+    guid: 083afb202333ae9419ff2a9a190a9082
+  - enabled: 1
     path: Assets/Scenes/Farm.unity
     guid: 119b7ac8aa7781c4090866d1f387c59f
   - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: fba0205e117eb3d45ada76d74475847f
+  - enabled: 1
+    path: Assets/Scenes/Wager.unity
+    guid: a867762022b653b48ab3ccd79443f16c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
