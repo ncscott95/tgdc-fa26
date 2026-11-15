@@ -18,7 +18,6 @@ public class SoftbodySpriteShape : MonoBehaviour,
     [SerializeField] private List<Transform> _nodes;
     [SerializeField] private Steak _steak;
     [SerializeField] private PolygonCollider2D _polygonCollider;
-    [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _center;
 
     private float _tangentScale = 0.15f;
@@ -103,10 +102,7 @@ public class SoftbodySpriteShape : MonoBehaviour,
     {
         int count = Mathf.Min(_nodes.Count, MaxPoints);
 
-        _polygonCollider.SetPath(0, _points
-            .Select(t => new Vector2(t.localPosition.x, t.localPosition.y))
-            .ToArray()
-        );
+        List<Vector2> finalHullPoints = new List<Vector2>();
 
         for (int i = 0; i < count; i++)
         {
@@ -133,7 +129,11 @@ public class SoftbodySpriteShape : MonoBehaviour,
 
             _controller.spline.SetRightTangent(i, newRightTangent);
             _controller.spline.SetLeftTangent(i, -newRightTangent);
+
+            finalHullPoints.Add(finalSplinePos);
         }
+
+        _polygonCollider.SetPath(0, finalHullPoints);
 
         _renderer.GetPropertyBlock(_propBlock, 0);
         _propBlock.SetVector("_Offset", _randomUVOffset);
