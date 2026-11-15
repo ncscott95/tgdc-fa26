@@ -23,6 +23,11 @@ public class MeatGenerator : MonoBehaviour
         _testData = new SteakData();
     }
 
+    public Steak GenerateMeat()
+    {
+        return InstantiateSteak(new SteakData());
+    }
+
     public Steak InstantiateSteak(SteakData data)
     {
         int numNodes = data.ExteriorNodePositions.Count;
