@@ -26,7 +26,7 @@ public class SteakData
 
     // Visual data
     public List<Vector2> ExteriorNodePositions { get; private set; } = new List<Vector2>();
-    public List<PosRotScale> EyeTransforms { get; private set; } = new List<PosRotScale>();
+    public List<PosRotScale> EyeTransforms = new List<PosRotScale>();
     public Vector2 TextureUVOffset { get; private set; }
 
     // Random generation parameters
@@ -34,7 +34,7 @@ public class SteakData
     private const int MaxNodes = 12; // Inclusive
     private const float NoiseWeight = 0.3f;
     private const float BaseNodeDistance = 0.3f;
-    private const float EyePositionRandomRadius = 0.1f;
+    public const float EyePositionRandomRadius = 0.1f;
     private const float MinEyeScale = 0.5f;
     private const float MaxEyeScale = 0.7f;
 
@@ -330,14 +330,16 @@ public class SteakData
             ExteriorNodePositions.Add(new Vector2((BaseNodeDistance + noise) * coords.x, (BaseNodeDistance + noise) * coords.y));
         }
 
-        PosRotScale eyeTransform = new PosRotScale();
 
         // place eye at uniformly random point in circle
         float eyePosRadius = EyePositionRandomRadius * Mathf.Sqrt((float)rng.NextDouble());
         float eyePosTheta = (float)rng.NextDouble() * 2 * Mathf.PI;
-        eyeTransform.Position = new Vector2(eyePosRadius * Mathf.Cos(eyePosTheta), eyePosRadius * Mathf.Sin(eyePosTheta));
-        eyeTransform.RotationAngle = (float)rng.NextDouble() * 360f;
-        eyeTransform.Scale = (float)rng.NextDouble() * (MaxEyeScale - MinEyeScale) + MinEyeScale;
+        PosRotScale eyeTransform = new PosRotScale
+        {
+            Position = new Vector2(eyePosRadius * Mathf.Cos(eyePosTheta), eyePosRadius * Mathf.Sin(eyePosTheta)),
+            RotationAngle = (float)rng.NextDouble() * 360f,
+            Scale = (float)rng.NextDouble() * (MaxEyeScale - MinEyeScale) + MinEyeScale
+        };
         EyeTransforms.Add(eyeTransform);
 
         foreach (Trait trait in Traits)
@@ -402,6 +404,7 @@ public class SteakData
     }
 }
 
+[System.Serializable]
 public struct PosRotScale
 {
     public Vector2 Position;

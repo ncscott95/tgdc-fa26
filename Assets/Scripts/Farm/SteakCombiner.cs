@@ -45,6 +45,19 @@ public class SteakCombiner : MonoBehaviour
         List<PosRotScale> eyes = new List<PosRotScale>();
         eyes.AddRange(left.EyeTransforms);
         eyes.AddRange(right.EyeTransforms);
+        int totalEyes = eyes.Count;
+        for (int i = 0; i < totalEyes; i++)
+        {
+            float eyePosRadius = 2 * SteakData.EyePositionRandomRadius * Mathf.Sqrt(Random.value);
+            float eyePosTheta = 2 * i * Mathf.PI / totalEyes;
+            PosRotScale newTransform = new PosRotScale
+            {
+                Position = new Vector2(eyePosRadius * Mathf.Cos(eyePosTheta), eyePosRadius * Mathf.Sin(eyePosTheta)),
+                RotationAngle = eyes[i].RotationAngle,
+                Scale = eyes[i].Scale
+            };
+            eyes[i] = newTransform;
+        }
 
         Vector2 uvOffset = Random.value > 0.5f ? left.TextureUVOffset : right.TextureUVOffset;
         List<string> descriptors = new List<string>()
