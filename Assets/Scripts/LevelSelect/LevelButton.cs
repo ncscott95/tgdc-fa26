@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class LevelButton :
     [SerializeField] private MedalDisplay _medals;
     [SerializeField] private Image _lockIcon;
     [SerializeField] private Image _previewImage;
+    [SerializeField] private TextMeshProUGUI _unlockText;
     private const float BUBBLE_SPEED = 0.5f;
     private const float BUBBLE_SIZE = 1.15f;
     private bool _locked = true;
@@ -23,6 +25,7 @@ public class LevelButton :
     {
         LevelDetails levelDetails = PersistentData.Instance.Levels[_level];
         _locked = levelDetails.Locked;
+        _unlockText.text = $"${levelDetails.UnlockPrice}";
         SetLocked(_locked);
 
         List<RaceDetails> raceDetails = levelDetails.Details;
@@ -30,6 +33,19 @@ public class LevelButton :
         bool silver = raceDetails[1].MedalEarned;
         bool gold = raceDetails[2].MedalEarned;
         _medals.SetMedals(bronze, silver, gold);
+    }
+
+    public void Unlock()
+    {
+        LevelDetails levelDetails = PersistentData.Instance.Levels[_level];
+        int unlockPrice = levelDetails.UnlockPrice;
+
+        if (PersistentData.Instance.Money < unlockPrice) return;
+        PersistentData.Instance.Money -= unlockPrice;
+        _locked = false;
+        levelDetails.Locked = false;
+        // TODO update money text
+        SetLocked(false);
     }
 
     public void OnPointerDown(PointerEventData eventData)
