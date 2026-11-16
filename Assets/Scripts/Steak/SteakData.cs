@@ -289,6 +289,8 @@ public class SteakData
         "Groovy"
     };
 
+    private static readonly System.Random rng = new System.Random();
+
     public SteakData(List<Trait> traits, List<Vector2> exteriorNodePositions, List<PosRotScale> eyeTransforms, Vector2 textureUVOffset, string name, List<string> descriptors)
     {
         Traits = traits;
@@ -305,7 +307,7 @@ public class SteakData
 
         // randomly select trait
         // assumes base-level steaks can only have 0 or 1 trait
-        bool hasTrait = Random.value <= TraitChance;
+        bool hasTrait = rng.NextDouble() <= TraitChance;
         if (hasTrait)
         {
             Traits.Add(CreateTrait(SelectRandomTrait()));
@@ -314,10 +316,10 @@ public class SteakData
         // Visual data
 
         // random offsets to sample into the perlin noise
-        float noiseOffsetX = Random.Range(0f, 1000f);
-        float noiseOffsetY = Random.Range(0f, 1000f);
+        float noiseOffsetX = (float)rng.NextDouble() * 1000f;
+        float noiseOffsetY = (float)rng.NextDouble() * 1000f;
 
-        int numNodes = Random.Range(MinNodes, MaxNodes + 1);
+        int numNodes = rng.Next(MinNodes, MaxNodes + 1);
 
         // apply random offsets to perimeter nodes
         for (int i = 0; i < numNodes; i++)
@@ -331,11 +333,11 @@ public class SteakData
         PosRotScale eyeTransform = new PosRotScale();
 
         // place eye at uniformly random point in circle
-        float eyePosRadius = EyePositionRandomRadius * Mathf.Sqrt(Random.value);
-        float eyePosTheta = Random.value * 2 * Mathf.PI;
+        float eyePosRadius = EyePositionRandomRadius * Mathf.Sqrt((float)rng.NextDouble());
+        float eyePosTheta = (float)rng.NextDouble() * 2 * Mathf.PI;
         eyeTransform.Position = new Vector2(eyePosRadius * Mathf.Cos(eyePosTheta), eyePosRadius * Mathf.Sin(eyePosTheta));
-        eyeTransform.RotationAngle = Random.Range(0f, 360f);
-        eyeTransform.Scale = Random.Range(MinEyeScale, MaxEyeScale);
+        eyeTransform.RotationAngle = (float)rng.NextDouble() * 360f;
+        eyeTransform.Scale = (float)rng.NextDouble() * (MaxEyeScale - MinEyeScale) + MinEyeScale;
         EyeTransforms.Add(eyeTransform);
 
         foreach (Trait trait in Traits)
@@ -346,12 +348,12 @@ public class SteakData
             }
         }
 
-        TextureUVOffset = new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f));
+        TextureUVOffset = new Vector2((float)rng.NextDouble(), (float)rng.NextDouble());
 
         // Flavor data
 
-        Descriptors.Add(DescriptorPoolA[Random.Range(0, DescriptorPoolA.Length)]);
-        Descriptors.Add(DescriptorPoolB[Random.Range(0, DescriptorPoolB.Length)]);
+        Descriptors.Add(DescriptorPoolA[rng.Next(0, DescriptorPoolA.Length)]);
+        Descriptors.Add(DescriptorPoolB[rng.Next(0, DescriptorPoolB.Length)]);
     }
 
     private static TraitID SelectRandomTrait()
