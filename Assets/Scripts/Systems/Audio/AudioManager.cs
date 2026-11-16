@@ -4,6 +4,9 @@ using FMOD.Studio;
 
 public class AudioManager : Singleton<AudioManager>
 {
+    private FMOD.GUID _currentMusicID;
+    private EventInstance _musicInstance;
+
     public void Play(EventReference eventReference)
     {
         RuntimeManager.PlayOneShot(eventReference);
@@ -18,8 +21,23 @@ public class AudioManager : Singleton<AudioManager>
         instance.release();
     }
 
-    public void PlaySquelch()
+    public void PlayMusic(EventReference eventReference)
     {
-        
+        if (eventReference.Guid != _currentMusicID)
+        {
+            StopMusic();
+            _currentMusicID = eventReference.Guid;
+            _musicInstance = RuntimeManager.CreateInstance(eventReference);
+            _musicInstance.start();
+        }
+    }
+
+    public void StopMusic()
+    {
+        if (_musicInstance.isValid())
+        {
+            _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            _musicInstance.release();
+        }
     }
 }
