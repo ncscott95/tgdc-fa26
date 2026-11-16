@@ -8,6 +8,8 @@ public class PersistentData : Singleton<PersistentData>
     public LevelDetails SelectedLevel;
     public RaceDetails SelectedRace;
     public List<SteakData> Steaks = new List<SteakData>();
+    public List<SteakData> SelectedSteaks = new List<SteakData>();
+    public int SteakSlots = 1;
 
     public void SaveSteak(SteakData steakData)
     {

@@ -8,7 +8,10 @@ public enum SceneType
 {
     Farm,
     LevelSelect,
-    Wager
+    Wager,
+    RaceLevel1,
+    RaceLevel2,
+    RaceLevel3
 }
 
 public class SceneLoader : Singleton<SceneLoader>

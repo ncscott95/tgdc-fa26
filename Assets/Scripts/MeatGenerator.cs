@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.U2D;
 
 public class MeatGenerator : MonoBehaviour
 {
@@ -28,24 +29,24 @@ public class MeatGenerator : MonoBehaviour
         return InstantiateSteak(data);
     }
 
-    public Steak GenerateMeat(SteakData data, bool save, Transform spawnPoint = null)
+    public Steak GenerateMeat(SteakData data, bool save, Transform spawnPoint = null, bool greyOut = false)
     {
         if (save)
         {
             PersistentData.Instance.SaveSteak(data);
         }
 
-        return InstantiateSteak(data, spawnPoint);
+        return InstantiateSteak(data, spawnPoint, greyOut);
     }
 
-    private Steak InstantiateSteak(SteakData data, Transform spawnPoint = null)
+    private Steak InstantiateSteak(SteakData data, Transform spawnPoint = null, bool greyOut = false)
     {
         int numNodes = data.ExteriorNodePositions.Count;
         List<Transform> nodes = new List<Transform>();
         List<Rigidbody2D> rigidbodies = new List<Rigidbody2D>();
         List<CircleCollider2D> colliders = new List<CircleCollider2D>();
 
-        Transform newMeat = Instantiate(_basePrefab).transform;
+        Transform newMeat = Instantiate(_basePrefab, transform).transform;
         if (spawnPoint != null)
         {
             newMeat.position = spawnPoint.position;
@@ -153,6 +154,11 @@ public class MeatGenerator : MonoBehaviour
         SoftbodySpriteShape softSprite = newMeat.GetComponent<SoftbodySpriteShape>();
         float tangentScale = BaseTangentScale / (numNodes / 6f); // arbitrary amount to shrink with more nodes
         softSprite.Initialize(nodes, eyeRenderers, tangentScale, data.TextureUVOffset);
+
+        if (greyOut)
+        {
+            newMeat.GetComponentInChildren<SpriteShapeRenderer>().color = new Color(0.7f, 0.7f, 0.7f, 1f);
+        }
 
         Steak steak = newMeat.GetComponent<Steak>();
         steak.SetData(data);

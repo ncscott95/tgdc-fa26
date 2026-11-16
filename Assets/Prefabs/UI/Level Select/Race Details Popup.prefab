@@ -467,6 +467,34 @@ PrefabInstance:
       propertyPath: m_text
       value: easy
       objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6923310097146461490}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
       value: Button
@@ -554,13 +582,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6923310097146461490}
   m_SourcePrefab: {fileID: 100100000, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
 --- !u!224 &7303947992263849350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 1944620576632979579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8107554695352426269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 1944620576632979579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6923310097146461490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107554695352426269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
+  index: 0
 --- !u!1001 &2784726291275076644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -763,6 +812,34 @@ PrefabInstance:
       propertyPath: m_text
       value: medium
       objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7661230093509853332}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -850,13 +927,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7661230093509853332}
   m_SourcePrefab: {fileID: 100100000, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
 --- !u!224 &4768409418418684591 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 4435116575124010834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6337636770231969844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 4435116575124010834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7661230093509853332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337636770231969844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
+  index: 1
 --- !u!1001 &5583844006709292624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1092,6 +1190,34 @@ PrefabInstance:
       propertyPath: m_text
       value: hard
       objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2174702410230793483}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DifficultyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -1179,13 +1305,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2174702410230793483}
   m_SourcePrefab: {fileID: 100100000, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
 --- !u!224 &3192470413900708932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 6047655838971152825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4148636485645932255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 6047655838971152825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2174702410230793483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4148636485645932255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
+  index: 2
 --- !u!1001 &9095283530014911401
 PrefabInstance:
   m_ObjectHideFlags: 0

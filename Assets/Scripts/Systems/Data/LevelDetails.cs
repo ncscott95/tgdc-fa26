@@ -8,4 +8,5 @@ public class LevelDetails
     public bool Locked = true;
     public int UnlockPrice = 0;
     public List<RaceDetails> Details = new List<RaceDetails>();
+    public SceneType Scene;
 }

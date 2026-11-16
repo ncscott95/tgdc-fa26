@@ -17,6 +17,7 @@ public class WagerManager : MonoBehaviour
 
     void Start()
     {
+        PersistentData.Instance.SelectedSteaks.Clear();
         _wagerLevel = 0;
 
         while (Prices.Level(_wagerLevel) < PersistentData.Instance.Money)

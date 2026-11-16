@@ -163,6 +163,7 @@ MonoBehaviour:
     - NumOpponents: 7
       MaxWager: 2500
       MedalEarned: 0
+    Scene: 3
   - Race: 
     Locked: 1
     UnlockPrice: 5000
@@ -176,6 +177,7 @@ MonoBehaviour:
     - NumOpponents: 7
       MaxWager: 250000
       MedalEarned: 0
+    Scene: 4
   - Race: 
     Locked: 1
     UnlockPrice: 500000
@@ -189,15 +191,20 @@ MonoBehaviour:
     - NumOpponents: 7
       MaxWager: 25000000
       MedalEarned: 0
+    Scene: 5
   SelectedLevel:
     Race: 
     Locked: 1
     UnlockPrice: 0
     Details: []
+    Scene: 0
   SelectedRace:
     NumOpponents: 3
     MaxWager: 50
     MedalEarned: 0
+  Steaks: []
+  SelectedSteaks: []
+  SteakSlots: 1
 --- !u!4 &355662551
 Transform:
   m_ObjectHideFlags: 0
