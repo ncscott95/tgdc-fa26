@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5474456936276000919}
   - component: {fileID: 6318778747875157550}
   - component: {fileID: 6156123748218701125}
+  - component: {fileID: 5117827194672291244}
   m_Layer: 0
   m_Name: MeatNode
   m_TagString: Untagged
@@ -96,3 +97,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.2
+--- !u!114 &5117827194672291244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293069489389904850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b899da972c47f70448ff6750ae059942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteakImpact
+  squelchRef:
+    Guid:
+      Data1: 1177945351
+      Data2: 1230081774
+      Data3: 1450540160
+      Data4: 1480157313
+    Path: event:/random-squelch
