@@ -6,7 +6,7 @@ public class SteakRepopulator : MonoBehaviour
 {
     private const float RepopulationDelay = 0.1f;
 
-    [SerializeField] private MeatGenerator _meatGenerator;
+    [SerializeField] private SteakGenerator _meatGenerator;
     [SerializeField] private List<Transform> _spawnPoints;
 
     private List<SteakData> _steaksToRepopulate = new List<SteakData>();

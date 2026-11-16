@@ -9,7 +9,7 @@ public class SteakData
 
     // Trait parameters
     public const int MaxTraits = 3;
-    private const float TraitChance = 0.25f;
+    private const float TraitChance = 1f;
     private static readonly KeyValuePair<TraitID, float>[] TraitWeights =
     {
         new(TraitID.Sticky, 1f),

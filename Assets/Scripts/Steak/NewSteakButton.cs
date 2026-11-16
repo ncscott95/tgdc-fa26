@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NewSteakButton : MonoBehaviour
 {
-    [SerializeField] private MeatGenerator _steakGenerator;
+    [SerializeField] private SteakGenerator _steakGenerator;
     [SerializeField] private TextMeshProUGUI _buttonText;
     [SerializeField] private Button _button;
     [SerializeField] private Popup _namingPopup;

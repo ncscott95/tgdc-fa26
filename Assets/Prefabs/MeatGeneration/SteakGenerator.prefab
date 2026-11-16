@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2753109361540163454}
   - component: {fileID: 3732384213557514180}
   m_Layer: 0
-  m_Name: MeatGenerator
+  m_Name: SteakGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

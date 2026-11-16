@@ -1983,7 +1983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812215310803884279, guid: 4c3d03820177e2848bf875270b118ce3, type: 3}
       propertyPath: m_Name
-      value: MeatGenerator
+      value: SteakGenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2179,6 +2179,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
   sceneType: 1
+--- !u!114 &2113108299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7946066651777009838, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+  m_PrefabInstance: {fileID: 2121342302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &2121342302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2283,6 +2294,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -97.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2121342305}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNameFieldUpdate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NamingPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504040334187190862, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5951889999034732596, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
       propertyPath: m_Name
       value: Naming Popup
@@ -2324,6 +2363,10 @@ PrefabInstance:
       value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 7651255543675436620, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: _okButton
+      value: 
+      objectReference: {fileID: 2113108299}
+    - target: {fileID: 7651255543675436620, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
       propertyPath: _newSteakButton
       value: 
       objectReference: {fileID: 558199793}
@@ -2348,6 +2391,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a01461710587c41a8cc37028e27417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Popup
+--- !u!114 &2121342305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7651255543675436620, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+  m_PrefabInstance: {fileID: 2121342302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee0550b6dc0e454dbccec22453047d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NamingPopup
 --- !u!1001 &2380917435273637876
 PrefabInstance:
   m_ObjectHideFlags: 0

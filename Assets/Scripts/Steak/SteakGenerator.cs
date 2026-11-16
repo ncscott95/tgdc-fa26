@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.U2D;
 
-public class MeatGenerator : MonoBehaviour
+public class SteakGenerator : MonoBehaviour
 {
     private const float BaseNodeColliderRadius = 0.2f;
     private const float BaseTangentScale = 0.15f;
@@ -163,13 +162,5 @@ public class MeatGenerator : MonoBehaviour
         Steak steak = newMeat.GetComponent<Steak>();
         steak.SetData(data);
         return steak;
-    }
-
-    void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            InstantiateSteak(new SteakData());
-        }
     }
 }

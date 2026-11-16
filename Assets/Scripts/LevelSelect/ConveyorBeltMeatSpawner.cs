@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ConveyorBeltMeatSpawner : MonoBehaviour
 {
-    [SerializeField] private MeatGenerator _generator;
+    [SerializeField] private SteakGenerator _generator;
 
     private const float SPAWN_INTERVAL = 3f;
     private const int MAX_MEATS = 10;

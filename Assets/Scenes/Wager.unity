@@ -2849,7 +2849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812215310803884279, guid: 4c3d03820177e2848bf875270b118ce3, type: 3}
       propertyPath: m_Name
-      value: MeatGenerator
+      value: SteakGenerator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

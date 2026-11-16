@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaceStartManager : MonoBehaviour
 {
     private const float SpawnDelay = 0.1f;
-    [SerializeField] private MeatGenerator _meatGenerator;
+    [SerializeField] private SteakGenerator _meatGenerator;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject _startPlatform;
     [SerializeField] private Sprite _platformUpSprite;
