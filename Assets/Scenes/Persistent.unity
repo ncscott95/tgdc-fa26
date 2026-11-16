@@ -196,6 +196,7 @@ MonoBehaviour:
   Steaks: []
   SelectedSteaks: []
   SteakSlots: 1
+  CurrentWager: 0
 --- !u!4 &355662551
 Transform:
   m_ObjectHideFlags: 0
