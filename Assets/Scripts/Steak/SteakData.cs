@@ -11,7 +11,7 @@ public class SteakData
     public List<Trait> Traits { get; private set; } = new List<Trait>();
 
     // Trait parameters
-    private const int MaxTraits = 3;
+    public const int MaxTraits = 3;
     private const float TraitChance = 0.25f;
     private static readonly KeyValuePair<TraitID, float>[] TraitWeights =
     {

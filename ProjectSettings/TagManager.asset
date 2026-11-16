@@ -44,6 +44,9 @@ TagManager:
   - name: Steaks
     uniqueID: 2779873727
     locked: 0
+  - name: Foreground
+    uniqueID: 4217422197
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
