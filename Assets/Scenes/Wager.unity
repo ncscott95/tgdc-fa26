@@ -721,9 +721,37 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1124418264}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseWager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WagerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Decrease Wager
       objectReference: {fileID: 0}
     - target: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Pivot.x
@@ -815,6 +843,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 322853254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &322853256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 322853254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &426367048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1111,7 @@ GameObject:
   - component: {fileID: 437339905}
   - component: {fileID: 437339904}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Interactions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2149,6 +2188,7 @@ GameObject:
   - component: {fileID: 1124418262}
   - component: {fileID: 1124418261}
   - component: {fileID: 1124418260}
+  - component: {fileID: 1124418264}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2240,6 +2280,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1124418264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124418259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a788c02d5b914d8589fe7b740383c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WagerManager
+  _increaseWagerButton: {fileID: 1770718040}
+  _decreaseWagerButton: {fileID: 322853256}
+  _wagerText: {fileID: 609607481}
+  _moreSteakButton: {fileID: 0}
+  _moreSteakText: {fileID: 0}
+  _winText: {fileID: 973183317}
+  _loseText: {fileID: 862142883}
+  _raceButton: {fileID: 0}
 --- !u!1 &1187437237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3112,9 +3172,37 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1124418264}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseWager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WagerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7673988726822264678, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: Increase Wager
       objectReference: {fileID: 0}
     - target: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
       propertyPath: m_Pivot.x
@@ -3206,6 +3294,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9196482504063694333, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
   m_PrefabInstance: {fileID: 1770718038}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1770718040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 1770718038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1877099226
 GameObject:
   m_ObjectHideFlags: 0
