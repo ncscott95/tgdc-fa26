@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaceStart : MonoBehaviour
+public class RaceStartManager : MonoBehaviour
 {
     private const float SpawnDelay = 0.1f;
     [SerializeField] private MeatGenerator _meatGenerator;
@@ -30,6 +30,8 @@ public class RaceStart : MonoBehaviour
     {
         yield return SpawnRacers();
 
+        yield return new WaitForSeconds(2);
+
         Debug.Log("3...");
         yield return new WaitForSeconds(1);
         Debug.Log("2...");
@@ -45,14 +47,18 @@ public class RaceStart : MonoBehaviour
     private IEnumerator SpawnRacers()
     {
         int playerRacers = PersistentData.Instance.SelectedSteaks.Count;
-        int totalRacers = PersistentData.Instance.GetSelectedRace().NumOpponents + playerRacers;
+        int totalRacers = PersistentData.Instance.GetSelectedRace().NumOpponents + 1;
         List<SteakSpawnGreyedPair> racersToSpawn = new List<SteakSpawnGreyedPair>();
+
+        // increase spacing with fewer racers
+        // 4 racers: 2 space, 8 racers: 1 space
+        float spacingScale = -totalRacers / 4f + 3f;
 
         for (int i = 0; i < totalRacers; i++)
         {
-            _spawnPositions.Add(new Vector2(totalRacers / 2f - 0.5f + i, 0f));
+            _spawnPositions.Add(new Vector2((-totalRacers / 2f + 0.5f + i) * spacingScale, 0f));
+            Debug.Log($"{_spawnPositions[i]}");
         }
-
 
         for (int i = 0; i < playerRacers; i++)
         {
