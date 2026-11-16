@@ -40,7 +40,7 @@ public class SteakDataDisplay : MonoBehaviour
         _selectedData = null;
     }
 
-    private string CreateDescriptionString(List<string> descriptors)
+    public static string CreateDescriptionString(List<string> descriptors)
     {
         // assumes exactly two descriptors
         string output = $"this mis-steak is {descriptors[0]} and {descriptors[1]}.";

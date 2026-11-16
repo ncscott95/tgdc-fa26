@@ -15,6 +15,8 @@ public class Popup : MonoBehaviour
 
     public void Hide()
     {
+        if (!gameObject.activeInHierarchy) return;
+
         StopAllCoroutines();
         StartCoroutine(HideRoutine());
     }

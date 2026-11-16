@@ -688,9 +688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d0133fb0f390f46b38142b289e320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewSteakButton
-  steakGenerator: {fileID: 1690604112}
+  _steakGenerator: {fileID: 1690604112}
   _buttonText: {fileID: 558199790}
   _button: {fileID: 558199791}
+  _namingPopup: {fileID: 2121342304}
+  _interactions: {fileID: 783200551}
 --- !u!1001 &645985715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1448,6 +1450,7 @@ RectTransform:
   - {fileID: 558199788}
   - {fileID: 2121342303}
   - {fileID: 1522508331}
+  - {fileID: 1161272269}
   m_Father: {fileID: 1661969917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1729,11 +1732,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5466007262580967323, guid: 112b1031fedfd2241b2b0b02ce7f0ee4, type: 3}
   m_PrefabInstance: {fileID: 7073649944911305544}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1620194161 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6437814330956854376, guid: 112b1031fedfd2241b2b0b02ce7f0ee4, type: 3}
-  m_PrefabInstance: {fileID: 7073649944911305544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661969913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1851,6 @@ MonoBehaviour:
   _popup: {fileID: 7073649944911305546}
   _nameField: {fileID: 1801336654}
   _descriptionField: {fileID: 1065650761}
-  _traitCapsuleContainer: {fileID: 1620194161}
   _traitCapsules:
   - {fileID: 1846080118}
   - {fileID: 1720914911}
@@ -2270,6 +2267,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1589826065651027371, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589826065651027371, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589826065651027371, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589826065651027371, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -97.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5951889999034732596, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
       propertyPath: m_Name
       value: Naming Popup
@@ -2278,6 +2291,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6897643191282355295, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897643191282355295, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897643191282355295, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897643191282355295, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -162.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490547584766737507, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490547584766737507, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490547584766737507, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490547584766737507, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651255543675436620, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+      propertyPath: _newSteakButton
+      value: 
+      objectReference: {fileID: 558199793}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2288,6 +2337,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 432221365594555033, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
   m_PrefabInstance: {fileID: 2121342302}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2121342304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7553932239934683005, guid: b1baa0e2e8e92224684f0ce5fd69720e, type: 3}
+  m_PrefabInstance: {fileID: 2121342302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a01461710587c41a8cc37028e27417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Popup
 --- !u!1001 &2380917435273637876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2300,6 +2360,10 @@ PrefabInstance:
       propertyPath: steakGenerator
       value: 
       objectReference: {fileID: 1690604112}
+    - target: {fileID: 1052530315712062693, guid: 802f086057258a54ca3997b44f940634, type: 3}
+      propertyPath: _newSteakButton
+      value: 
+      objectReference: {fileID: 558199793}
     - target: {fileID: 7541652316464343337, guid: 802f086057258a54ca3997b44f940634, type: 3}
       propertyPath: m_Name
       value: Combiner

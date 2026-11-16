@@ -6,7 +6,7 @@ public class SteakCombiner : MonoBehaviour
 {
     [SerializeField] private SteakContainerTrigger _containerLeft;
     [SerializeField] private SteakContainerTrigger _containerRight;
-    [SerializeField] private MeatGenerator steakGenerator;
+    [SerializeField] private NewSteakButton _newSteakButton;
     [SerializeField] private SpriteRenderer _windowGlowEffect;
     [SerializeField] private FMODUnity.EventReference _mergeSfx;
     private const float GLOW_DURATION = 1f;
@@ -92,7 +92,7 @@ public class SteakCombiner : MonoBehaviour
         PersistentData.Instance.RemoveSteak(leftSteak.Data);
         PersistentData.Instance.RemoveSteak(rightSteak.Data);
         
-        steakGenerator.GenerateMeat(combinedData, true);
+        _newSteakButton.NewCombinedSteak(combinedData);
 
         _canMerge = true;
     }
