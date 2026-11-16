@@ -11,7 +11,8 @@ public enum SceneType
     Wager,
     RaceLevel1,
     RaceLevel2,
-    RaceLevel3
+    RaceLevel3,
+    Title
 }
 
 public class SceneLoader : Singleton<SceneLoader>
@@ -33,6 +34,8 @@ public class SceneLoader : Singleton<SceneLoader>
                 loadedScenes.Add(sceneType);
             }
         }
+
+        if (SceneManager.sceneCount == 1) AddScene(SceneType.Title);
     }
 
     public void AddScene(SceneType sceneType)
