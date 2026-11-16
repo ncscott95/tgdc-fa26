@@ -3,7 +3,7 @@ using UnityEngine;
 public class TinyTrait : Trait, ISizeBehavior
 {
     public float RadiusMultiplier => 0.75f;
-    public TinyTrait() : base(TraitID.Tiny, "Tiny") { }
+    public TinyTrait() : base(TraitID.Tiny, "Tiny", new Color(0.9471698f, 0.6028528f, 0.3699323f)) { }
 
     public void Invoke(SteakData steakData)
     {

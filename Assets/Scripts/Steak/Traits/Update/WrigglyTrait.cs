@@ -7,7 +7,7 @@ public class WrigglyTrait : Trait, IUpdateBehavior
     private float _seedX = -1f;
     private float _seedY = -1f;
 
-    public WrigglyTrait() : base(TraitID.Wriggly, "Wriggly") { }
+    public WrigglyTrait() : base(TraitID.Wriggly, "Wriggly", new Color(0.9320754f, 0.6545112f, 0.364037f)) { }
 
     public void Invoke(Rigidbody2D rigidbody2D)
     {

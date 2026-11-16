@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class FarmInteractionSystem : InteractionSystemBase
 {
+    [SerializeField] private SteakDataDisplay _dataDisplay;
+
     private Steak _draggedSteak;
     Vector2 _dragTarget;
 
@@ -15,11 +17,13 @@ public class FarmInteractionSystem : InteractionSystemBase
     {
         _draggedSteak = steak;
         _dragTarget = Camera.main.ScreenToWorldPoint(pointerEvent.position);
+        _dataDisplay.ShowDisplay(steak.Data);
     }
 
     public override void EndDrag(Steak steak)
     {
         _draggedSteak = null;
+        _dataDisplay.HideDisplay();
     }
 
     public override void Hover(Steak steak)

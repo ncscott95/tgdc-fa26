@@ -3,7 +3,7 @@ using UnityEngine;
 public class GiantTrait : Trait, ISizeBehavior
 {
     public float RadiusMultiplier => 1.33f;
-    public GiantTrait() : base(TraitID.Giant, "Giant") { }
+    public GiantTrait() : base(TraitID.Giant, "Giant", new Color(0.227451f, 0.5294118f, 0.7215686f)) { }
 
     public void Invoke(SteakData steakData)
     {

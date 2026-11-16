@@ -9,7 +9,7 @@ public class JumpyTrait : Trait, IUpdateBehavior
     private float _jumpCooldown = 0f;
     private bool _isInitialized = false;
 
-    public JumpyTrait() : base(TraitID.Jumpy, "Jumpy") { }
+    public JumpyTrait() : base(TraitID.Jumpy, "Jumpy", new Color(0.5154076f, 0.7207546f, 0.5356888f)) { }
 
     public void Invoke(Rigidbody2D rigidbody2D)
     {

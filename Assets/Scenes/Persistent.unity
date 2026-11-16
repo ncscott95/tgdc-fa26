@@ -385,6 +385,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Transition
   transition: {fileID: 978582605}
+--- !u!1 &1531544058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531544059}
+  - component: {fileID: 1531544060}
+  m_Layer: 0
+  m_Name: AssetLookup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531544059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531544058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531544060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531544058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987fbb14c9e1a2240bcda07d2980fb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssetLookup
+  TraitSpriteTable:
+  - key: 0
+    value: {fileID: 21300000, guid: 44293924a168f8a418d295186df0d55d, type: 3}
+  - key: 1
+    value: {fileID: 21300000, guid: 32f08467cd4cf3f498f2e1dd4e51abe2, type: 3}
+  - key: 2
+    value: {fileID: 21300000, guid: d55a5ffb05f548143bb5c0e31d398604, type: 3}
+  - key: 3
+    value: {fileID: 21300000, guid: 12162f0c147a289439c40c8ea6787e86, type: 3}
+  - key: 4
+    value: {fileID: 0}
+  - key: 5
+    value: {fileID: 21300000, guid: 5b81bac3aa9b84949a7b1ef99828da77, type: 3}
+  - key: 6
+    value: {fileID: 21300000, guid: 4c8c76403034f364e870397a6bcb59d8, type: 3}
+  - key: 7
+    value: {fileID: 21300000, guid: 7679e9315b3a0b24c85641d2b138ad05, type: 3}
+  - key: 8
+    value: {fileID: 21300000, guid: 2d127d669c5de104aad8a3745b71db9a, type: 3}
+  - key: 9
+    value: {fileID: 21300000, guid: 338d2f0d3e359dc4e888ee72ad19bd39, type: 3}
 --- !u!1 &1823241288
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,3 +592,4 @@ SceneRoots:
   - {fileID: 1123868213}
   - {fileID: 355662551}
   - {fileID: 1964978046}
+  - {fileID: 1531544059}
