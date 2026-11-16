@@ -149,7 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentData
   Money: 10
-  SelectedRace: 
+  Race:
+    SelectedRace: 
+    NumOpponents: 3
+    MaxWager: 50
 --- !u!4 &355662551
 Transform:
   m_ObjectHideFlags: 0
