@@ -13,6 +13,6 @@ public class EnterRaceButton : MonoBehaviour
             PersistentData.Instance.SelectedSteaks.Add(steak.Data);
         }
 
-        SceneLoader.Instance.ChangeScene(PersistentData.Instance.SelectedLevel.Scene);
+        SceneLoader.Instance.ChangeScene(PersistentData.Instance.GetSelectedLevel().Scene);
     }
 }

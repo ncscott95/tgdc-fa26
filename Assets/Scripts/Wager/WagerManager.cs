@@ -44,7 +44,7 @@ public class WagerManager : MonoBehaviour
     private void UpdateWager()
     {
         int wagerCost = 0;
-        int maxWager = PersistentData.Instance.SelectedRace.MaxWager;
+        int maxWager = PersistentData.Instance.GetSelectedRace().MaxWager;
         int nextWagerCost = Prices.Level(_wagerLevel + 1);
 
         if (_wagerLevel == -1)
@@ -66,7 +66,7 @@ public class WagerManager : MonoBehaviour
     private void UpdateRewards(int wagerCost)
     {
         int money = PersistentData.Instance.Money;
-        int numOpponents = PersistentData.Instance.SelectedRace.NumOpponents;
+        int numOpponents = PersistentData.Instance.GetSelectedRace().NumOpponents;
         int winAmount = wagerCost * (numOpponents + 2);
         int loseAmount = money - wagerCost;
         if (wagerCost == 0) winAmount = 15;

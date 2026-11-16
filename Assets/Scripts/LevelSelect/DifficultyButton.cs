@@ -6,7 +6,6 @@ public class DifficultyButton : MonoBehaviour
 
     public void SelectDifficulty()
     {
-        Debug.Log($"Selecting difficulty {index}");
-        PersistentData.Instance.SelectedRace = PersistentData.Instance.SelectedLevel.Details[index];
+        PersistentData.Instance.SelectedRace = index;
     }
 }
