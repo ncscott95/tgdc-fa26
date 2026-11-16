@@ -1525,6 +1525,7 @@ GameObject:
   - component: {fileID: 1124418262}
   - component: {fileID: 1124418261}
   - component: {fileID: 1124418260}
+  - component: {fileID: 1124418264}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1616,6 +1617,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1124418264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124418259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc641afa85b4d904e91039ec9dc80203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  _levelButtons:
+  - {fileID: 7788311107417281600}
+  - {fileID: 2113195741}
+  - {fileID: 1358746834}
 --- !u!1001 &1358746832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1627,6 +1644,10 @@ PrefabInstance:
     - target: {fileID: 16911700321872010, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
       propertyPath: m_Name
       value: Level Preview (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
+      propertyPath: _level
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
       propertyPath: _popup
@@ -1778,6 +1799,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6013010697492367608, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
   m_PrefabInstance: {fileID: 1358746832}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1358746834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
+  m_PrefabInstance: {fileID: 1358746832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e300e15a12879a4aae0a83d980148ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelButton
 --- !u!1 &1511358669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,6 +2239,10 @@ PrefabInstance:
       value: Level Preview (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
+      propertyPath: _level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
       propertyPath: _popup
       value: 
       objectReference: {fileID: 1018651946}
@@ -2523,6 +2559,17 @@ MonoBehaviour:
   _basePrefab: {fileID: 6446141073009252288, guid: e8c99954c9c267043bd339c2ebe22f23, type: 3}
   _nodePrefab: {fileID: 1293069489389904850, guid: ca261c2cc6bc8ce4a8020452fdc3c243, type: 3}
   _eyePrefab: {fileID: 5701531693035481770, guid: 6329e335a93de0446bf9cc8cfb8a8bec, type: 3}
+--- !u!114 &2113195741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
+  m_PrefabInstance: {fileID: 1746830706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e300e15a12879a4aae0a83d980148ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelButton
 --- !u!1 &2126748042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2794,6 +2841,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6013010697492367608, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
   m_PrefabInstance: {fileID: 7788311107417281596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7788311107417281600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2571837872792408896, guid: 102b36ac3ab4eba45b5009950c46d1cf, type: 3}
+  m_PrefabInstance: {fileID: 7788311107417281596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e300e15a12879a4aae0a83d980148ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelButton
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

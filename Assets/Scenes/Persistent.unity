@@ -149,10 +149,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentData
   Money: 10
-  Race:
-    SelectedRace: 
+  Levels:
+  - Race: 
+    Locked: 0
+    UnlockPrice: 0
+    Details:
+    - NumOpponents: 3
+      MaxWager: 100
+      MedalEarned: 0
+    - NumOpponents: 5
+      MaxWager: 500
+      MedalEarned: 0
+    - NumOpponents: 7
+      MaxWager: 2500
+      MedalEarned: 0
+  - Race: 
+    Locked: 1
+    UnlockPrice: 5000
+    Details:
+    - NumOpponents: 3
+      MaxWager: 10000
+      MedalEarned: 0
+    - NumOpponents: 5
+      MaxWager: 50000
+      MedalEarned: 0
+    - NumOpponents: 7
+      MaxWager: 250000
+      MedalEarned: 0
+  - Race: 
+    Locked: 1
+    UnlockPrice: 500000
+    Details:
+    - NumOpponents: 3
+      MaxWager: 1000000
+      MedalEarned: 0
+    - NumOpponents: 5
+      MaxWager: 5000000
+      MedalEarned: 0
+    - NumOpponents: 7
+      MaxWager: 25000000
+      MedalEarned: 0
+  SelectedLevel:
+    Race: 
+    Locked: 1
+    UnlockPrice: 0
+    Details: []
+  SelectedRace:
     NumOpponents: 3
     MaxWager: 50
+    MedalEarned: 0
 --- !u!4 &355662551
 Transform:
   m_ObjectHideFlags: 0

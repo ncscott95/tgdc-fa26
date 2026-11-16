@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,9 +9,20 @@ public class LevelButton :
     IPointerEnterHandler,
     IPointerExitHandler
 {
+    [SerializeField] private int _level;
     [SerializeField] private Popup _popup;
+    [SerializeField] private MedalDisplay _medals;
     private const float BUBBLE_SPEED = 0.5f;
     private const float BUBBLE_SIZE = 1.15f;
+
+    void Start()
+    {
+        List<RaceDetails> raceDetails = PersistentData.Instance.Levels[_level].Details;
+        bool bronze = raceDetails[0].MedalEarned;
+        bool silver = raceDetails[1].MedalEarned;
+        bool gold = raceDetails[2].MedalEarned;
+        _medals.SetMedals(bronze, silver, gold);
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
