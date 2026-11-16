@@ -329,6 +329,7 @@ Transform:
   - {fileID: 1425643578}
   - {fileID: 1822798915}
   - {fileID: 969784223}
+  - {fileID: 645985716}
   - {fileID: 1690604110}
   - {fileID: 137397372}
   - {fileID: 1143574630}
@@ -581,6 +582,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewSteakButton
   steakGenerator: {fileID: 1690604112}
+--- !u!1001 &645985715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 182869090}
+    m_Modifications:
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430827866044640364, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: m_Name
+      value: SteakRepopulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667349070990386727, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+      propertyPath: _meatGenerator
+      value: 
+      objectReference: {fileID: 1690604112}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+--- !u!4 &645985716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1555170782137575193, guid: c48e1ffbfa30a59439a654bb03d2967f, type: 3}
+  m_PrefabInstance: {fileID: 645985715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &709936245
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +910,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -77545099
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: ae8ab8ef42ea4af40b654a313f512bca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1719,10 +1786,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 182869090}
     m_Modifications:
-    - target: {fileID: 1873741895937016824, guid: 4c3d03820177e2848bf875270b118ce3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.48
-      objectReference: {fileID: 0}
     - target: {fileID: 2753109361540163454, guid: 4c3d03820177e2848bf875270b118ce3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

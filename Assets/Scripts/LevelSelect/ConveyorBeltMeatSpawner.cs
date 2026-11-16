@@ -26,7 +26,7 @@ public class ConveyorBeltMeatSpawner : MonoBehaviour
 
     private void AddMeat()
     {
-        Steak meat = _generator.GenerateMeat();
+        Steak meat = _generator.GenerateMeat(false);
         meat.transform.SetParent(transform, true);
         _meats.Enqueue(meat);
         if (_meats.Count > MAX_MEATS)

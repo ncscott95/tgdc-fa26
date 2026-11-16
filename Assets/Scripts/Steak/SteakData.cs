@@ -1,13 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class SteakData
 {
     // Gameplay data
-    public float Speed { get; private set; }
-    public float Stickiness { get; private set; }
-    public float Weight { get; private set; }
-    public float Tenderness { get; private set; }
     public List<Trait> Traits { get; private set; } = new List<Trait>();
 
     // Trait parameters
@@ -30,7 +27,7 @@ public class SteakData
     // Visual data
     public List<Vector2> ExteriorNodePositions { get; private set; } = new List<Vector2>();
     public List<PosRotScale> EyeTransforms { get; private set; } = new List<PosRotScale>();
-    public Vector2 TextureUVOffset;
+    public Vector2 TextureUVOffset { get; private set; }
 
     // Random generation parameters
     private const int MinNodes = 6;
@@ -40,6 +37,267 @@ public class SteakData
     private const float EyePositionRandomRadius = 0.1f;
     private const float MinEyeScale = 0.5f;
     private const float MaxEyeScale = 0.7f;
+
+    // Flavor data
+    public string Name = "";
+    public List<string> Descriptors = new List<string>();
+
+    // Flavor parameters
+    // assumes steaks only have one descriptor from each pool
+    private static readonly string[] DescriptorPoolA =
+    {
+        "Agile",
+        "Angular",
+        "Ashen",
+        "Asymmetrical",
+        "Athletic",
+        "Bald",
+        "Bearded",
+        "Blotchy",
+        "Bony",
+        "Brittle",
+        "Broad",
+        "Bulky",
+        "Burly",
+        "Bushy",
+        "Chubby",
+        "Chunky",
+        "Coarse",
+        "Curvy",
+        "Dainty",
+        "Dark",
+        "Delicate",
+        "Dry",
+        "Dull",
+        "Flabby",
+        "Flat",
+        "Flawless",
+        "Frail",
+        "Freckled",
+        "Frizzy",
+        "Furry",
+        "Gaunt",
+        "Glossy",
+        "Graceful",
+        "Greasy",
+        "Hairy",
+        "Hollow",
+        "Lanky",
+        "Lean",
+        "Lithe",
+        "Lush",
+        "Messy",
+        "Muscular",
+        "Oily",
+        "Pale",
+        "Petite",
+        "Plump",
+        "Porcelain",
+        "Portly",
+        "Prominent",
+        "Puffy",
+        "Radiant",
+        "Robust",
+        "Rosy",
+        "Rugged",
+        "Sallow",
+        "Scarred",
+        "Scrawny",
+        "Scruffy",
+        "Shaggy",
+        "Shapely",
+        "Shiny",
+        "Short",
+        "Silky",
+        "Sinewy",
+        "Sleek",
+        "Slender",
+        "Slim",
+        "Smooth",
+        "Spiky",
+        "Spotty",
+        "Stocky",
+        "Stout",
+        "Straight",
+        "Gay",
+        "Bisexual",
+        "Strapping",
+        "Sturdy",
+        "Symmetrical",
+        "Stale",
+        "Musty",
+        "Dusty",
+        "Tall",
+        "About to expire",
+        "Thick",
+        "Thin",
+        "Toned",
+        "Trim",
+        "Voluminous",
+        "Voluptuous",
+        "Weak",
+        "Weathered",
+        "Wiry",
+        "Wrinkly",
+        "Firm",
+        "Itchy",
+        "Wobbly",
+        "Gelatinous",
+        "Putrid",
+        "Rotten", 
+        "Sour",
+        "Rancid",
+        "Stringy",
+        "Palid", 
+        "Wet", 
+        "Goopy", 
+        "Dry",
+        "Glooby", 
+        "Slimy", 
+        "Stinky", 
+        "Smelly", 
+        "Maggot-filled",
+        "Fragile", 
+        "Sturdy", 
+        "Leathery", 
+        "Chewy", 
+        "Juicy", 
+        "Squishy", 
+        "Slippery", 
+        "Gooey"
+    };
+    private static readonly string[] DescriptorPoolB =
+    {
+        "Funny",
+        "Kind", 
+        "Stupid",
+        "Brilliant",
+        "Thoughtful",
+        "Enthusiastic",
+        "Bubbly",
+        "Wise",
+        "Diligent",
+        "Curious",
+        "Open-minded",
+        "Witty",
+        "Elegant",
+        "Eccentric",
+        "Artistic",
+        "Sincere",
+        "Trustworthy",
+        "Friendly",
+        "Loving",
+        "Joyful",
+        "Gentle",
+        "Energetic",
+        "Humble",
+        "Tenacious",
+        "Resilient",
+        "Courageous",
+        "Whimsical",
+        "Understanding",
+        "Sensitive",
+        "Inspiring",
+        "Depressed",
+        "Self-centered",
+        "Bossy",
+        "Vain",
+        "Selfish",
+        "Brainless",
+        "Moody",
+        "Petulant",
+        "Thoughtless",
+        "Dense",
+        "Awkward",
+        "Cold",
+        "Volatile",
+        "Scatterbrained",
+        "Obnoxious",
+        "Fickle",
+        "Conceited",
+        "Stubborn",
+        "Gullible",
+        "Cowardly",
+        "Petty",
+        "Lazy",
+        "Careless",
+        "Unsophisticated",
+        "Combative",
+        "Insincere",
+        "Crude",
+        "Foolish",
+        "Manipulative",
+        "Immature",
+        "Grouchy",
+        "Bizarre",
+        "Short-tempered",
+        "Melodramatic",
+        "Impolite",
+        "Mean",
+        "Arrogant",
+        "Cruel",
+        "Flaky",
+        "Rude",
+        "Hostile",
+        "Bitter",
+        "Incompetent",
+        "Gloomy",
+        "Reserved",
+        "Nonchalant",
+        "Discerning",
+        "Rational",
+        "Serious",
+        "Collected",
+        "Demure",
+        "Realistic",
+        "Composed",
+        "Sensible",
+        "Aloof",
+        "Stoic",
+        "Impartial",
+        "Shy",
+        "Pragmatic",
+        "Mellow",
+        "Tolerant",
+        "Detached",
+        "Skeptical",
+        "Unassuming",
+        "Firm",
+        "Compliant",
+        "Observant",
+        "Mercurial",
+        "Orderly",
+        "Deliberate",
+        "Cautious",
+        "Efficient",
+        "Discreet",
+        "Inquisitive",
+        "Quirky",
+        "Extroverted",
+        "Mysterious",
+        "Civil",
+        "Outspoken",
+        "Evil",
+        "Sad",
+        "Grieving",
+        "Hungry",
+        "Starving",
+        "Ravenous",
+        "Peckish",
+        "In love", 
+        "Broken-hearted",
+        "Groovy"
+    };
+
+    public SteakData(List<Trait> traits, List<Vector2> exteriorNodePositions, List<PosRotScale> eyeTransforms, Vector2 textureUVOffset, string name, List<string> descriptors)
+    {
+        Traits = traits;
+        ExteriorNodePositions = exteriorNodePositions;
+        EyeTransforms = eyeTransforms;
+        TextureUVOffset = textureUVOffset;
+        Name = name;
+        Descriptors = descriptors;
+    }
 
     public SteakData()
     {
@@ -89,6 +347,11 @@ public class SteakData
         }
 
         TextureUVOffset = new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f));
+
+        // Flavor data
+
+        Descriptors.Add(DescriptorPoolA[Random.Range(0, DescriptorPoolA.Length)]);
+        Descriptors.Add(DescriptorPoolB[Random.Range(0, DescriptorPoolB.Length)]);
     }
 
     private static TraitID SelectRandomTrait()

@@ -6,13 +6,12 @@ public class SteakGrinder : MonoBehaviour
 
     public void OnPullLever()
     {
-        Steak[] steaksToGrind = new Steak[_container.ContainedSteaks.Count];
-        _container.ContainedSteaks.CopyTo(steaksToGrind);
+        int steakCount = _container.ContainedSteaks.Count;
 
-        for (int i = 0; i < steaksToGrind.Length; i++)
+        for (int i = 0; i < steakCount; i++)
         {
-            Steak steak = steaksToGrind[i];
-            // TODO: remove steak from player data
+            Steak steak = _container.ContainedSteaks[0];
+            PersistentData.Instance.RemoveSteak(_container.ContainedSteaks[0].Data);
             Destroy(steak.gameObject);
         }
 

@@ -6,6 +6,6 @@ public class NewSteakButton : MonoBehaviour
 
     public void NewSteak()
     {
-        steakGenerator.GenerateMeat();
+        steakGenerator.GenerateMeat(true);
     }
 }

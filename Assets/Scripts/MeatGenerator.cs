@@ -16,24 +16,29 @@ public class MeatGenerator : MonoBehaviour
     [SerializeField] private GameObject _nodePrefab;
     [SerializeField] private GameObject _eyePrefab;
 
-    private SteakData _testData;
-
-    void Start()
+    public Steak GenerateMeat(bool save)
     {
-        _testData = new SteakData();
-    }
+        SteakData data = new SteakData();
 
-    public Steak GenerateMeat()
-    {
-        return InstantiateSteak(new SteakData());
-    }
+        if (save)
+        {
+            PersistentData.Instance.SaveSteak(data);
+        }
 
-    public Steak GenerateMeat(SteakData data)
-    {
         return InstantiateSteak(data);
     }
 
-    private Steak InstantiateSteak(SteakData data)
+    public Steak GenerateMeat(SteakData data, bool save, Transform spawnPoint = null)
+    {
+        if (save)
+        {
+            PersistentData.Instance.SaveSteak(data);
+        }
+
+        return InstantiateSteak(data, spawnPoint);
+    }
+
+    private Steak InstantiateSteak(SteakData data, Transform spawnPoint = null)
     {
         int numNodes = data.ExteriorNodePositions.Count;
         List<Transform> nodes = new List<Transform>();
@@ -41,7 +46,14 @@ public class MeatGenerator : MonoBehaviour
         List<CircleCollider2D> colliders = new List<CircleCollider2D>();
 
         Transform newMeat = Instantiate(_basePrefab).transform;
-        newMeat.position = _spawnPoint.position;
+        if (spawnPoint != null)
+        {
+            newMeat.position = spawnPoint.position;
+        }
+        else
+        {
+            newMeat.position = _spawnPoint.position;
+        }
 
         PhysicsMaterial2D newMaterial = new PhysicsMaterial2D("NodeMaterial")
         {
@@ -152,7 +164,6 @@ public class MeatGenerator : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             InstantiateSteak(new SteakData());
-            // InstantiateSteak(_testData);
         }
     }
 }

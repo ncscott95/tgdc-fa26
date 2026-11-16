@@ -10,7 +10,6 @@ public class SteakContainerTrigger : SteakTrigger
         if (!ContainedSteaks.Contains(steak))
         {
             ContainedSteaks.Add(steak);
-            Debug.Log($"Steak entered container. Total steaks: {ContainedSteaks.Count}");
         }
     }
 
@@ -19,7 +18,6 @@ public class SteakContainerTrigger : SteakTrigger
         if (ContainedSteaks.Contains(steak))
         {
             ContainedSteaks.Remove(steak);
-            Debug.Log($"Steak exited container. Total steaks: {ContainedSteaks.Count}");
         }
     }
 }
