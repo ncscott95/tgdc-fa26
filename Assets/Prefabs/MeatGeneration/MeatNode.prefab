@@ -116,3 +116,4 @@ MonoBehaviour:
       Data3: 1450540160
       Data4: 1480157313
     Path: event:/random-squelch
+  particles: {fileID: 1394094637887798988, guid: b16b2a8abe5284e4799d3bdbeb7b9fa4, type: 3}

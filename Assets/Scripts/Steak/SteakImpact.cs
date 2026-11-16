@@ -3,6 +3,7 @@ using UnityEngine;
 public class SteakImpact : MonoBehaviour
 {
     [SerializeField] private FMODUnity.EventReference squelchRef;
+    [SerializeField] private GameObject particles;
     private const float THRESHOLD = 20000f;
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -20,6 +21,12 @@ public class SteakImpact : MonoBehaviour
         {
             float volume = Mathf.Clamp01(Mathf.InverseLerp(THRESHOLD, THRESHOLD * 5f, impactForce));
             AudioManager.Instance.Play(squelchRef, volume, collision.GetContact(0).point);
+
+            Vector2 normal = collision.GetContact(0).normal;
+            float angle = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg;
+            GameObject newParticle = Instantiate(particles);
+            newParticle.transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0f, 0f, angle - 90f));
+            newParticle.SetActive(true);
         }
     }
 }
