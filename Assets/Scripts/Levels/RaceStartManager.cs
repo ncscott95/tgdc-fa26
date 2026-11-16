@@ -10,6 +10,7 @@ public class RaceStartManager : MonoBehaviour
     [SerializeField] private GameObject _startPlatform;
     [SerializeField] private Sprite _platformUpSprite;
     [SerializeField] private Sprite _platformDownSprite;
+    [SerializeField] private RaceTrackingCamera _trackingCam;
 
     private Collider2D _platformCollider;
     private SpriteRenderer _platformRenderer;
@@ -49,6 +50,7 @@ public class RaceStartManager : MonoBehaviour
         int playerRacers = PersistentData.Instance.SelectedSteaks.Count;
         int totalRacers = PersistentData.Instance.GetSelectedRace().NumOpponents + 1;
         List<SteakSpawnGreyedPair> racersToSpawn = new List<SteakSpawnGreyedPair>();
+        List<Transform> transforms = new List<Transform>();
 
         // increase spacing with fewer racers
         // 4 racers: 2 space, 8 racers: 1 space
@@ -81,9 +83,12 @@ public class RaceStartManager : MonoBehaviour
             _spawnPoint.localPosition = _spawnPositions[position];
             _spawnPositions.RemoveAt(position);
 
-            _meatGenerator.GenerateMeat(data, false, _spawnPoint, racersToSpawn[racer].SpawnGreyedOut);
+            Transform newTransform = _meatGenerator.GenerateMeat(data, false, _spawnPoint, racersToSpawn[racer].SpawnGreyedOut).transform;
+            transforms.Add(newTransform);
             racersToSpawn.RemoveAt(racer);
         }
+
+        _trackingCam.Initialize(transforms);
     }
 
     [System.Serializable]

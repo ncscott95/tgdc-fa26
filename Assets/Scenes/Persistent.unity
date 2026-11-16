@@ -192,16 +192,8 @@ MonoBehaviour:
       MaxWager: 25000000
       MedalEarned: 0
     Scene: 5
-  SelectedLevel:
-    Race: 
-    Locked: 1
-    UnlockPrice: 0
-    Details: []
-    Scene: 0
-  SelectedRace:
-    NumOpponents: 3
-    MaxWager: 50
-    MedalEarned: 0
+  SelectedLevel: 0
+  SelectedRace: 0
   Steaks: []
   SelectedSteaks: []
   SteakSlots: 1
