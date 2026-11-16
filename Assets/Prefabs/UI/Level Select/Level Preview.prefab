@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e300e15a12879a4aae0a83d980148ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
+  _popup: {fileID: 0}
 --- !u!1 &2653965623523090146
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,8 +183,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 24.79
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -228,11 +229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -282,6 +283,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6169259955054871577, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2798863382549368763, guid: 158d2cbf5b44cd54c85255c5121ee209, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -330,11 +335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -384,6 +389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6169259955054871577, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9189513443856922857, guid: 6062ea0a54ec9da4eb5895f14cdc3c22, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -432,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1158193123303743970, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -486,6 +495,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6169259955054871577, guid: 4d0ab3a0e8a1fc745bce0ab8013cf7b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7864005308156884938, guid: 3c0a66f5552956e4399923686e208765, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
