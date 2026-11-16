@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +7,15 @@ public class SteakCombiner : MonoBehaviour
     [SerializeField] private SteakContainerTrigger _containerLeft;
     [SerializeField] private SteakContainerTrigger _containerRight;
     [SerializeField] private MeatGenerator steakGenerator;
+    [SerializeField] private SpriteRenderer _windowGlowEffect;
+    [SerializeField] private FMODUnity.EventReference _mergeSfx;
+    private const float GLOW_DURATION = 1f;
+    private Color _glowColor = new Color(0.827f, 0.855f, 0.239f, 1.0f);
+    private bool _canMerge = true;
 
     public void OnPushButton()
     {
-        if (_containerLeft.ContainedSteaks.Count != 1 || _containerRight.ContainedSteaks.Count != 1)
+        if (_canMerge && (_containerLeft.ContainedSteaks.Count != 1 || _containerRight.ContainedSteaks.Count != 1))
         {
             // TODO: play fail SFX?
             return;
@@ -18,17 +24,8 @@ public class SteakCombiner : MonoBehaviour
         Steak leftSteak = _containerLeft.ContainedSteaks[0];
         Steak rightSteak = _containerRight.ContainedSteaks[0];
 
-        SteakData combinedData = CombineSteakData(leftSteak.Data, rightSteak.Data);
-
-        // TODO: remove steaks from player data
-        PersistentData.Instance.RemoveSteak(leftSteak.Data);
-        PersistentData.Instance.RemoveSteak(rightSteak.Data);
-        Destroy(leftSteak.gameObject);
-        Destroy(rightSteak.gameObject);
-
-        steakGenerator.GenerateMeat(combinedData, true);
-
-        // TODO: play particles
+        _canMerge = false;
+        StartCoroutine(GlowRoutine(leftSteak, rightSteak));
     }
 
     private SteakData CombineSteakData(SteakData left, SteakData right)
@@ -58,5 +55,45 @@ public class SteakCombiner : MonoBehaviour
 
         SteakData combined = new SteakData(combinedTraits, nodes, eyes, uvOffset, "", descriptors);
         return combined;
+    }
+
+    private IEnumerator GlowRoutine(Steak leftSteak, Steak rightSteak)
+    {
+        AudioManager.Instance.Play(_mergeSfx);
+
+        yield return BasicAnimations.Interpolate(
+            () => _windowGlowEffect.gameObject.SetActive(true),
+            t =>
+            {
+                float smooth = BasicAnimations.Smooth(t);
+                _windowGlowEffect.color = new Color(_glowColor.r, _glowColor.g, _glowColor.b, smooth);
+            },
+            null,
+            GLOW_DURATION / 2f
+        );
+
+        Destroy(leftSteak.gameObject);
+        Destroy(rightSteak.gameObject);
+
+        yield return BasicAnimations.Interpolate(
+            null,
+            t =>
+            {
+                float smooth = BasicAnimations.Smooth(t);
+                _windowGlowEffect.color = new Color(_glowColor.r, _glowColor.g, _glowColor.b, 1.0f - smooth);
+            },
+            () => _windowGlowEffect.gameObject.SetActive(false),
+            GLOW_DURATION / 2f
+        );
+
+        SteakData combinedData = CombineSteakData(leftSteak.Data, rightSteak.Data);
+
+        // TODO: remove steaks from player data
+        PersistentData.Instance.RemoveSteak(leftSteak.Data);
+        PersistentData.Instance.RemoveSteak(rightSteak.Data);
+        
+        steakGenerator.GenerateMeat(combinedData, true);
+
+        _canMerge = true;
     }
 }
