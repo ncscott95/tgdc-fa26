@@ -51,7 +51,7 @@ public class LevelButton :
     public void OnPointerDown(PointerEventData eventData)
     {
         if (_locked) return;
-        PersistentData.Instance.SelectedLevel = PersistentData.Instance.Levels[_level];
+        PersistentData.Instance.SelectedLevel = _level;
         _popup.Show();
     }
 

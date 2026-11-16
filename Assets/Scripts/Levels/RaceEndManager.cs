@@ -17,9 +17,16 @@ public class RaceEndManager : MonoBehaviour
 
     public void EndRace(bool playerWin)
     {
-        // TODO: don't think this will automatically update Levels[i].RaceDetails
-        PersistentData.Instance.SelectedRace.MedalEarned = true;
-        // TODO: apply change in money
+        if (playerWin)
+        {
+            // TODO: don't think this will automatically update Levels[i].RaceDetails
+            PersistentData.Instance.GetSelectedRace().MedalEarned = true;
+            // TODO: apply change in money
+        }
+        else
+        {
+            // TODO: apply change in money
+        }
 
         GameObject background = playerWin ? _winBackground : _loseBackground;
         background.SetActive(true);
@@ -29,7 +36,7 @@ public class RaceEndManager : MonoBehaviour
         List<bool> medalStates = new List<bool>();
         for (int i = 0; i < 3; i++)
         {
-            medalStates.Add(PersistentData.Instance.SelectedLevel.Details[i].MedalEarned);
+            medalStates.Add(PersistentData.Instance.GetSelectedLevel().Details[i].MedalEarned);
         }
 
         _medalDisplay.SetMedals(medalStates[0], medalStates[1], medalStates[2]);

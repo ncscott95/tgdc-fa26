@@ -45,7 +45,7 @@ public class RaceStart : MonoBehaviour
     private IEnumerator SpawnRacers()
     {
         int playerRacers = PersistentData.Instance.SelectedSteaks.Count;
-        int totalRacers = PersistentData.Instance.SelectedRace.NumOpponents + playerRacers;
+        int totalRacers = PersistentData.Instance.GetSelectedRace().NumOpponents + playerRacers;
         List<SteakSpawnGreyedPair> racersToSpawn = new List<SteakSpawnGreyedPair>();
 
         for (int i = 0; i < totalRacers; i++)

@@ -365,7 +365,7 @@ public class SteakData
             totalWeight += weightPair.Value;
         }
 
-        float random = Random.Range(0f, totalWeight);
+        float random = (float)rng.NextDouble() * totalWeight;
 
         foreach (KeyValuePair<TraitID, float> weightPair in TraitWeights)
         {
