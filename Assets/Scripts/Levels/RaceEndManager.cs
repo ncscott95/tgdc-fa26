@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RaceEndManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class RaceEndManager : MonoBehaviour
     [SerializeField] private GameObject _winBackground;
     [SerializeField] private GameObject _loseBackground;
     [SerializeField] private MedalDisplay _medalDisplay;
+    [SerializeField] private TextMeshProUGUI _oldAmount;
+    [SerializeField] private TextMeshProUGUI _newAmount;
 
     void Awake()
     {
@@ -17,21 +20,31 @@ public class RaceEndManager : MonoBehaviour
 
     public void EndRace(bool playerWin)
     {
+        GameObject background = playerWin ? _winBackground : _loseBackground;
+        background.SetActive(true);
+        
+        RaceDetails race = PersistentData.Instance.GetSelectedRace();
+
+        int outcome = PersistentData.Instance.Money;
+        string color = "";
         if (playerWin)
         {
-            // TODO: don't think this will automatically update Levels[i].RaceDetails
-            PersistentData.Instance.GetSelectedRace().MedalEarned = true;
-            // TODO: apply change in money
+            outcome += PersistentData.Instance.CurrentWager * (race.NumOpponents + 2);
+            color = "#008000ff";
         }
         else
         {
-            // TODO: apply change in money
+            outcome -= PersistentData.Instance.CurrentWager;
+            color = "#ff0000ff";
         }
 
-        GameObject background = playerWin ? _winBackground : _loseBackground;
-        background.SetActive(true);
+        _oldAmount.text = $"{PersistentData.Instance.Money}";
+        _newAmount.text = $"<color={color}>{outcome}</color>";
 
         // TODO: show change in money (might be nice to have a count up with sound effect?)
+        PersistentData.Instance.Money = outcome;
+
+        race.MedalEarned = race.MedalEarned || playerWin;
 
         List<bool> medalStates = new List<bool>();
         for (int i = 0; i < 3; i++)

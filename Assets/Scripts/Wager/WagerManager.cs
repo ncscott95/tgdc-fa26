@@ -74,4 +74,9 @@ public class WagerManager : MonoBehaviour
         _winText.text = $"{money} -> <color=#008000ff>{winAmount}</color>";
         _loseText.text = $"{money} -> <color=red>{loseAmount}</color>";
     }
+
+    public int GetWagerAmount()
+    {
+        return Prices.Level(_wagerLevel);
+    }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnterRaceButton : MonoBehaviour
 {
     [SerializeField] private SteakContainerTrigger _container;
+    [SerializeField] private WagerManager _wager;
 
     public void EnterRace()
     {
@@ -12,6 +13,8 @@ public class EnterRaceButton : MonoBehaviour
         {
             PersistentData.Instance.SelectedSteaks.Add(steak.Data);
         }
+
+        PersistentData.Instance.CurrentWager = _wager.GetWagerAmount();
 
         SceneLoader.Instance.ChangeScene(PersistentData.Instance.GetSelectedLevel().Scene);
     }

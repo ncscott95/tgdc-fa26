@@ -2393,6 +2393,8 @@ MonoBehaviour:
   _winBackground: {fileID: 1365046806}
   _loseBackground: {fileID: 2075028624}
   _medalDisplay: {fileID: 531744413}
+  _oldAmount: {fileID: 2002961376}
+  _newAmount: {fileID: 913356827}
 --- !u!1 &1630170314
 GameObject:
   m_ObjectHideFlags: 0

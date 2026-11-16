@@ -13,6 +13,7 @@ public class PersistentData : Singleton<PersistentData>
     public int SteakSlots = 1;
     public event Action<int> OnMoneyChanged;
     public event Action OnSteaksChanged;
+    public int CurrentWager;
 
     public void SaveSteak(SteakData steakData)
     {
