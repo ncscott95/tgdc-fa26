@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c230198eafaf6f9459e508f7afe37449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentData
-  Money: 10
   Levels:
   - Race: 
     Locked: 0

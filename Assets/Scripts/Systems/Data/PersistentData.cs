@@ -1,15 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PersistentData : Singleton<PersistentData>
 {
-    public int Money = 10;
+    private int _money = 10;
+    public int Money { get => _money; set => SetMoney(value); }
     public List<LevelDetails> Levels = new List<LevelDetails>();
     public int SelectedLevel;
     public int SelectedRace;
     public List<SteakData> Steaks = new List<SteakData>();
     public List<SteakData> SelectedSteaks = new List<SteakData>();
     public int SteakSlots = 1;
+    public event Action<int> OnMoneyChanged;
 
     public void SaveSteak(SteakData steakData)
     {
@@ -29,5 +32,11 @@ public class PersistentData : Singleton<PersistentData>
     public RaceDetails GetSelectedRace()
     {
         return Levels[SelectedLevel].Details[SelectedRace];
+    }
+
+    private void SetMoney(int money)
+    {
+        _money = money;
+        OnMoneyChanged?.Invoke(money);
     }
 }
