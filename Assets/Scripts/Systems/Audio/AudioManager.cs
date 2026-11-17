@@ -1,6 +1,7 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System.Collections;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -31,13 +32,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMusic(EventReference eventReference)
     {
-        if (eventReference.Guid != _currentMusicID)
-        {
-            StopMusic();
-            _currentMusicID = eventReference.Guid;
-            _musicInstance = RuntimeManager.CreateInstance(eventReference);
-            _musicInstance.start();
-        }
+        StartCoroutine(PlayMusicRoutine(eventReference));
     }
 
     public void StopMusic()
@@ -46,6 +41,22 @@ public class AudioManager : Singleton<AudioManager>
         {
             _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             _musicInstance.release();
+        }
+    }
+
+    private IEnumerator PlayMusicRoutine(EventReference eventReference)
+    {
+        while (!RuntimeManager.HasBankLoaded("Master"))
+        {
+            yield return null;
+        }
+
+        if (eventReference.Guid != _currentMusicID)
+        {
+            StopMusic();
+            _currentMusicID = eventReference.Guid;
+            _musicInstance = RuntimeManager.CreateInstance(eventReference);
+            _musicInstance.start();
         }
     }
 }
