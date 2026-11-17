@@ -79,6 +79,7 @@ public class WagerManager : MonoBehaviour
 
     public int GetWagerAmount()
     {
+        if (_wagerLevel == -1) return 0;
         return Prices.Level(_wagerLevel);
     }
 

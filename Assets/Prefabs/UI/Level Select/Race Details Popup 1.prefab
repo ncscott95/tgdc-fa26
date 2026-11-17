@@ -769,6 +769,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 5072341763311501524}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _button
+      value: 
+      objectReference: {fileID: 5146831982458590526}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _startSelected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty1
+      value: 
+      objectReference: {fileID: 7196357383063845342}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty2
+      value: 
+      objectReference: {fileID: 8661977859527395185}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption
@@ -789,11 +809,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &5072341763311501524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 153559528120379632, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 4919371592765696036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &5146831982458590526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 227473618758679834, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 4919371592765696036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!224 &5895043593127412278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1552185566273939986, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
   m_PrefabInstance: {fileID: 4919371592765696036}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6923310097146461490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 4919371592765696036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
 --- !u!1001 &5156356956193025224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -891,9 +944,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 5021094424726340664}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: index
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _button
+      value: 
+      objectReference: {fileID: 4946968173977915858}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty1
+      value: 
+      objectReference: {fileID: 6923310097146461490}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty2
+      value: 
+      objectReference: {fileID: 8661977859527395185}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption (1)
@@ -914,11 +983,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &4946968173977915858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 227473618758679834, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 5156356956193025224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &5021094424726340664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 153559528120379632, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 5156356956193025224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &5910261861827266266 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1552185566273939986, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
   m_PrefabInstance: {fileID: 5156356956193025224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7196357383063845342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 5156356956193025224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
 --- !u!1001 &5583844006709292624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1239,9 +1341,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 6793008064194181783}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: index
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _button
+      value: 
+      objectReference: {fileID: 6866924319482031997}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty1
+      value: 
+      objectReference: {fileID: 6923310097146461490}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _otherDifficulty2
+      value: 
+      objectReference: {fileID: 7196357383063845342}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption (2)
@@ -1267,6 +1385,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &6793008064194181783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 153559528120379632, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 6657465133651300967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &6866924319482031997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 227473618758679834, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 6657465133651300967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &8661977859527395185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+  m_PrefabInstance: {fileID: 6657465133651300967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf941d5f207a4588e2f6e7c02df10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
 --- !u!1001 &9095283530014911401
 PrefabInstance:
   m_ObjectHideFlags: 0
