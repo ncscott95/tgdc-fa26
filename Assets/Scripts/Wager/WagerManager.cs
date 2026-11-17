@@ -12,6 +12,7 @@ public class WagerManager : MonoBehaviour
     [SerializeField] private Button _raceButton;
     [SerializeField] private TextMeshProUGUI _raceButtonText;
     [SerializeField] private TextMeshProUGUI _steakCountText;
+    [SerializeField] private TextMeshProUGUI _maxWagerText;
 
     private int _wagerLevel;
     private int _selectedSteaks = 0;
@@ -19,9 +20,11 @@ public class WagerManager : MonoBehaviour
     void Start()
     {
         PersistentData.Instance.SelectedSteaks.Clear();
+        int maxWager = PersistentData.Instance.GetSelectedRace().MaxWager;
         _wagerLevel = 0;
+        _maxWagerText.text = $"max: ${maxWager}";
 
-        while (Prices.Level(_wagerLevel) < PersistentData.Instance.Money)
+        while (Prices.Level(_wagerLevel) < PersistentData.Instance.Money && Prices.Level(_wagerLevel) <= maxWager)
         {
             _wagerLevel++;
         }
@@ -69,7 +72,7 @@ public class WagerManager : MonoBehaviour
     {
         int money = PersistentData.Instance.Money;
         int numOpponents = PersistentData.Instance.GetSelectedRace().NumOpponents;
-        int winAmount = wagerCost * (numOpponents + 2);
+        int winAmount = money + (wagerCost * (numOpponents + 2));
         int loseAmount = money - wagerCost;
         if (wagerCost == 0) winAmount = 15;
 
