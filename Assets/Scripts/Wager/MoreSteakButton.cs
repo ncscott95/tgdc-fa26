@@ -12,7 +12,6 @@ public class MoreSteakButton : MonoBehaviour
 
     void Start()
     {
-        PersistentData.Instance.Money += 1000000;
         CalculateCost();
     }
 

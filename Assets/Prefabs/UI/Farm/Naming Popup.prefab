@@ -935,14 +935,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d54940030b984c4e9fe3e58691f5431, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d2c6912b060aa74b991d92c33cbec0e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1583,6 +1583,7 @@ MonoBehaviour:
   - {fileID: 8694447018515164324}
   - {fileID: 669653480367709548}
   - {fileID: 4675437657250356376}
+  _okButton: {fileID: 0}
 --- !u!114 &7553932239934683005 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1483732357554211936, guid: 48137b71579c67f459c9dc6f10713f25, type: 3}

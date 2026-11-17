@@ -112,7 +112,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2151804952836015581, guid: f68761319fe1acf4785c09d5f1104c8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -219,10 +219,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrusherObstacle
   _idleX: 8.5
   _closedX: 0.3
-  _idleDuration: 0.5
-  _closingDuration: 0.3
-  _closedDuration: 0.5
-  _openingDuration: 2
+  _idleDuration: 0.3
+  _closingDuration: 0.2
+  _closedDuration: 0.3
+  _openingDuration: 1.6
+  _initialDelay: 0
   _left: {fileID: 3582921726680772045}
   _right: {fileID: 3601002032455782877}
 --- !u!1 &5235410963121018470
@@ -337,7 +338,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6548653708067116871, guid: 64afc1cae46a53445b3e77a83425a321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
