@@ -151,7 +151,7 @@ MonoBehaviour:
   Levels:
   - Race: Pachinko 1
     Description: 'Classic meat-pachinko. Drop your mis-steaks and watch them squish against the pegs to see which of these rancid racers splats to the ground first. '
-    Thumbnail: {fileID: 0}
+    Thumbnail: {fileID: 48512351628158811, guid: 1c885b5a43c4de54db6f0fc45af61aa4, type: 3}
     Locked: 0
     SteakSlots: 1
     SteakPriceOffset: 2
@@ -169,7 +169,7 @@ MonoBehaviour:
     Scene: 3
   - Race: Pachinko 2
     Description: 'Meat-pachinko, with a twist. Tumbling windmills knock these acrid athletes off their game, slapping them silly as they plummet to the finish. '
-    Thumbnail: {fileID: 0}
+    Thumbnail: {fileID: 1863029110341857152, guid: 75f535cae19dc6f4fb84987a04dd14d4, type: 3}
     Locked: 1
     SteakSlots: 1
     SteakPriceOffset: 8
@@ -187,7 +187,7 @@ MonoBehaviour:
     Scene: 4
   - Race: Pachinko 3
     Description: "Ultimate meat-pachinko: the final showdown. Malicious meat tenderizers seek to make your juicy jousters into Sunday\u2019s lunch. Dodge the heat of the grill and claim your clammy championship title in the final chapter of mis-steaks. "
-    Thumbnail: {fileID: 0}
+    Thumbnail: {fileID: -5673070910473098468, guid: d3d157a3649179245b3639c17a423690, type: 3}
     Locked: 1
     SteakSlots: 1
     SteakPriceOffset: 11
@@ -207,7 +207,8 @@ MonoBehaviour:
   SelectedRace: 0
   Steaks: []
   SelectedSteaks: []
-  CurrentWager: 0
+  WagerWinAmount: 0
+  WagerLoseAmount: 0
 --- !u!4 &355662551
 Transform:
   m_ObjectHideFlags: 0
