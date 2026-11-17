@@ -693,6 +693,8 @@ MonoBehaviour:
   _button: {fileID: 558199791}
   _namingPopup: {fileID: 2121342304}
   _interactions: {fileID: 783200551}
+  _levelSelectButton: {fileID: 9184250014907045779}
+  _levelSelectButtonText: {fileID: 741354281}
 --- !u!1001 &645985715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -913,6 +915,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &741354281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6672150919163953327, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 9184250014907045778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &783200549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,6 +2902,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2044958256}
   m_SourcePrefab: {fileID: 100100000, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+--- !u!114 &9184250014907045779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6742335558284973381, guid: 525fb60d66bbb3e45a1fcfbf9cbb221d, type: 3}
+  m_PrefabInstance: {fileID: 9184250014907045778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889852912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

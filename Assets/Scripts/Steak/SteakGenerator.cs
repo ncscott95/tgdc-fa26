@@ -99,6 +99,9 @@ public class SteakGenerator : MonoBehaviour
             nodes.Add(newNode);
             rigidbodies.Add(newRb);
             colliders.Add(newCollider);
+
+            SteakImpact impact = newNode.GetComponent<SteakImpact>();
+            impact.SetParticleContainer(transform);
         }
 
         Rigidbody2D centerRb = newMeat.GetComponent<Rigidbody2D>();

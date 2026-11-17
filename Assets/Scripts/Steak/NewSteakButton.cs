@@ -10,6 +10,8 @@ public class NewSteakButton : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Popup _namingPopup;
     [SerializeField] private FarmInteractionSystem _interactions;
+    [SerializeField] private Button _levelSelectButton;
+    [SerializeField] private TextMeshProUGUI _levelSelectButtonText;
 
     private int _cost = 0;
     private Steak _latestSteak = null;
@@ -29,23 +31,25 @@ public class NewSteakButton : MonoBehaviour
     {
         PersistentData.Instance.Money -= _cost;
         _latestSteak = _steakGenerator.GenerateMeat(true);
-        _button.interactable = false;
-        _buttonText.text = "making your mis-steak...";
-        _interactions.SetDisabled(true);
         StartCoroutine(NamingPopupCoroutine());
     }
 
     public void NewCombinedSteak(SteakData combinedData)
     {
         _latestSteak = _steakGenerator.GenerateMeat(combinedData, true);
-        _button.interactable = false;
-        _buttonText.text = "merging your mis-steaks...";
-        _interactions.SetDisabled(true);
         StartCoroutine(NamingPopupCoroutine());
     }
 
     private IEnumerator NamingPopupCoroutine()
     {
+        _button.interactable = false;
+        _buttonText.color = Color.gray;
+        _buttonText.text = "merging your mis-steaks...";
+        _interactions.SetDisabled(true);
+
+        _levelSelectButton.interactable = false;
+        _levelSelectButtonText.color = Color.gray;
+
         yield return new WaitForSeconds(3);
         _namingPopup.Show();
     }
@@ -68,6 +72,9 @@ public class NewSteakButton : MonoBehaviour
     {
         CalculateCost();
         _interactions.SetDisabled(false);
+
+        _levelSelectButton.interactable = true;
+        _levelSelectButtonText.color = Color.white;
     }
 
     public SteakData GetLatestSteakData()
