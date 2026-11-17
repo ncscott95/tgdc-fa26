@@ -11,17 +11,29 @@ public class CrusherObstacle : MonoBehaviour
     [SerializeField] private float _closingDuration;
     [SerializeField] private float _closedDuration;
     [SerializeField] private float _openingDuration;
+    [SerializeField] private float _initialDelay = 0f;
 
     [Header("Objects")]
     [SerializeField] private Transform _left;
     [SerializeField] private Transform _right;
 
     private float _timer = 0f;
+    private bool _doneInitialWait = false;
 
     // Update is called once per frame
     void Update()
     {
         _timer += Time.deltaTime;
+
+        if (!_doneInitialWait)
+        {
+            if (_timer < _initialDelay)
+            {
+                return;
+            }
+            _doneInitialWait = true;
+            _timer = 0f;
+        }
 
         float xPos = _idleX;
         if (_timer < _idleDuration)
@@ -47,7 +59,7 @@ public class CrusherObstacle : MonoBehaviour
             _timer = 0f;
         }
 
-        _left.localPosition = new Vector2(-xPos, 0f);
-        _right.localPosition = new Vector2(xPos, 0f);
+        if (_left != null) _left.localPosition = new Vector2(-xPos, 0f);
+        if (_right != null) _right.localPosition = new Vector2(xPos, 0f);
     }
 }

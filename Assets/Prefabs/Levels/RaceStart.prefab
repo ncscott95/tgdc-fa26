@@ -80,8 +80,9 @@ MonoBehaviour:
   _meatGenerator: {fileID: 0}
   _spawnPoint: {fileID: 6639172448092689389}
   _startPlatform: {fileID: 4412433356642686841}
-  _platformUpSprite: {fileID: 21300000, guid: a4e4a572374d5964c911f4f1e4e55806, type: 3}
-  _platformDownSprite: {fileID: 21300000, guid: bc9ca7283b2ce094185f7c5073e83837, type: 3}
+  _platformUpSprite: {fileID: 21300000, guid: 100ea1b6bf0bc844fa84ce020fc395ed, type: 3}
+  _platformDownSprite: {fileID: 21300000, guid: 2599ebf96b527c0439ad2eeb9300d242, type: 3}
+  _trackingCam: {fileID: 0}
 --- !u!1 &4412433356642686841
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,12 +165,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a4e4a572374d5964c911f4f1e4e55806, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 100ea1b6bf0bc844fa84ce020fc395ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 0.93}
+  m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -214,7 +215,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 19.2, y: 10.8}
-    newSize: {x: 19.2, y: 0.93}
+    newSize: {x: 19.2, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
