@@ -7,7 +7,11 @@ public class EnterRaceButton : MonoBehaviour
 
     public void EnterRace()
     {
-        if (_container.ContainedSteaks.Count < 1 || _container.ContainedSteaks.Count > PersistentData.Instance.SteakSlots) return;
+        if (_container.ContainedSteaks.Count < 1 || 
+            _container.ContainedSteaks.Count > PersistentData.Instance.SteakSlots ||
+            _container.ContainedSteaks.Count > PersistentData.Instance.GetSelectedRace().NumOpponents) return;
+
+        PersistentData.Instance.SelectedSteaks.Clear();
 
         foreach (Steak steak in _container.ContainedSteaks)
         {

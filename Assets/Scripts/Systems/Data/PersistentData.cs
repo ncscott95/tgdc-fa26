@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PersistentData : Singleton<PersistentData>
 {
+    public const int MaxSteakSlots = 7;
     private int _money = 10;
     public int Money { get => _money; set => SetMoney(value); }
     public List<LevelDetails> Levels = new List<LevelDetails>();

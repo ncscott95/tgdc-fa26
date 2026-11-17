@@ -7,13 +7,14 @@ public class WagerManager : MonoBehaviour
     [SerializeField] private Button _increaseWagerButton;
     [SerializeField] private Button _decreaseWagerButton;
     [SerializeField] private TextMeshProUGUI _wagerText;
-    [SerializeField] private Button _moreSteakButton;
-    [SerializeField] private TextMeshProUGUI _moreSteakText;
     [SerializeField] private TextMeshProUGUI _winText;
     [SerializeField] private TextMeshProUGUI _loseText;
     [SerializeField] private Button _raceButton;
+    [SerializeField] private TextMeshProUGUI _raceButtonText;
+    [SerializeField] private TextMeshProUGUI _steakCountText;
 
     private int _wagerLevel;
+    private int _selectedSteaks = 0;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class WagerManager : MonoBehaviour
 
         _wagerLevel--;
         UpdateWager();
+        UpdateSteakCounter();
     }
 
     public void IncreaseWager()
@@ -78,5 +80,36 @@ public class WagerManager : MonoBehaviour
     public int GetWagerAmount()
     {
         return Prices.Level(_wagerLevel);
+    }
+
+    public void AddSteak()
+    {
+        _selectedSteaks++;
+        UpdateSteakCounter();
+    }
+
+    public void RemoveSteak()
+    {
+        _selectedSteaks--;
+        UpdateSteakCounter();
+    }
+
+    public void UpdateSteakCounter()
+    {
+        int raceMaxSteak = Mathf.Min(PersistentData.Instance.SteakSlots, PersistentData.Instance.GetSelectedRace().NumOpponents);
+        bool validSteakCount = _selectedSteaks > 0 && _selectedSteaks <= raceMaxSteak;
+        _raceButton.interactable = validSteakCount;
+        _raceButtonText.color = validSteakCount ? Color.white : Color.gray;
+
+        string color = "";
+        if (_raceButton.interactable)
+        {
+            color = "#008000ff";
+        }
+        else
+        {
+            color = "#ff0000ff";
+        }
+        _steakCountText.text = $"<color={color}>{_selectedSteaks}</color> / {raceMaxSteak} steaks";
     }
 }
