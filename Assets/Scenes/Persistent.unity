@@ -463,6 +463,8 @@ MonoBehaviour:
     value: {fileID: 21300000, guid: 2d127d669c5de104aad8a3745b71db9a, type: 3}
   - key: 9
     value: {fileID: 21300000, guid: 338d2f0d3e359dc4e888ee72ad19bd39, type: 3}
+  - key: 10
+    value: {fileID: 21300000, guid: 84750be4337bd56468bdf4b41e43b9e3, type: 3}
 --- !u!1 &1823241288
 GameObject:
   m_ObjectHideFlags: 0

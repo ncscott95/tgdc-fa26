@@ -22,6 +22,7 @@ public class SteakData
         new(TraitID.Giant, 1f),
         new(TraitID.Heavy, 1f),
         new(TraitID.Light, 1f),
+        new(TraitID.Blue, 0.1f),
     };
 
     // Visual data
@@ -399,6 +400,7 @@ public class SteakData
             TraitID.Giant => new GiantTrait(),
             TraitID.Heavy => new HeavyTrait(),
             TraitID.Light => new LightTrait(),
+            TraitID.Blue => new BlueTrait(),
             _ => throw new System.ArgumentOutOfRangeException(nameof(id), id, null)
         };
     }

@@ -11,7 +11,8 @@ public enum TraitID
     Tiny,
     Giant,
     Heavy,
-    Light
+    Light,
+    Blue
 }
 
 public abstract class Trait

@@ -162,6 +162,14 @@ public class SteakGenerator : MonoBehaviour
             newMeat.GetComponentInChildren<SpriteShapeRenderer>().color = new Color(0.7f, 0.7f, 0.7f, 1f);
         }
 
+        foreach (Trait trait in data.Traits)
+        {
+            if (trait is IColorBehavior colorTrait)
+            {
+                newMeat.GetComponentInChildren<SpriteShapeRenderer>().color = colorTrait.SpriteColor;
+            }
+        }
+
         Steak steak = newMeat.GetComponent<Steak>();
         steak.SetData(data);
         return steak;
