@@ -74,7 +74,7 @@ public class WagerManager : MonoBehaviour
         int numOpponents = PersistentData.Instance.GetSelectedRace().NumOpponents;
         int winAmount = money + (wagerCost * (numOpponents + 2));
         int loseAmount = money - wagerCost;
-        if (wagerCost == 0) winAmount = 15;
+        if (wagerCost == 0) winAmount = money + 15;
 
         _winText.text = $"{money} -> <color=#008000ff>{winAmount}</color>";
         _loseText.text = $"{money} -> <color=red>{loseAmount}</color>";
@@ -100,7 +100,7 @@ public class WagerManager : MonoBehaviour
 
     public void UpdateSteakCounter()
     {
-        int raceMaxSteak = Mathf.Min(PersistentData.Instance.SteakSlots, PersistentData.Instance.GetSelectedRace().NumOpponents);
+        int raceMaxSteak = Mathf.Min(PersistentData.Instance.GetSelectedLevel().SteakSlots, PersistentData.Instance.GetSelectedRace().NumOpponents);
         bool validSteakCount = _selectedSteaks > 0 && _selectedSteaks <= raceMaxSteak;
         _raceButton.interactable = validSteakCount;
         _raceButtonText.color = validSteakCount ? Color.white : Color.gray;

@@ -153,6 +153,8 @@ MonoBehaviour:
     Description: 'Classic meat-pachinko. Drop your mis-steaks and watch them squish against the pegs to see which of these rancid racers splats to the ground first. '
     Thumbnail: {fileID: 0}
     Locked: 0
+    SteakSlots: 1
+    SteakPriceOffset: 2
     UnlockPrice: 0
     Details:
     - NumOpponents: 3
@@ -169,6 +171,8 @@ MonoBehaviour:
     Description: 'Meat-pachinko, with a twist. Tumbling windmills knock these acrid athletes off their game, slapping them silly as they plummet to the finish. '
     Thumbnail: {fileID: 0}
     Locked: 1
+    SteakSlots: 1
+    SteakPriceOffset: 8
     UnlockPrice: 5000
     Details:
     - NumOpponents: 3
@@ -185,6 +189,8 @@ MonoBehaviour:
     Description: "Ultimate meat-pachinko: the final showdown. Malicious meat tenderizers seek to make your juicy jousters into Sunday\u2019s lunch. Dodge the heat of the grill and claim your clammy championship title in the final chapter of mis-steaks. "
     Thumbnail: {fileID: 0}
     Locked: 1
+    SteakSlots: 1
+    SteakPriceOffset: 11
     UnlockPrice: 500000
     Details:
     - NumOpponents: 3
@@ -201,7 +207,6 @@ MonoBehaviour:
   SelectedRace: 0
   Steaks: []
   SelectedSteaks: []
-  SteakSlots: 1
   CurrentWager: 0
 --- !u!4 &355662551
 Transform:

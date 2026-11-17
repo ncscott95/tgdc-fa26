@@ -11,7 +11,6 @@ public class PersistentData : Singleton<PersistentData>
     public int SelectedRace;
     public List<SteakData> Steaks = new List<SteakData>();
     public List<SteakData> SelectedSteaks = new List<SteakData>();
-    public int SteakSlots = 1;
     public event Action<int> OnMoneyChanged;
     public event Action OnSteaksChanged;
     public int CurrentWager;

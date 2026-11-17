@@ -9,6 +9,8 @@ public class LevelDetails
     public string Description = "";
     public Sprite Thumbnail;
     public bool Locked = true;
+    public int SteakSlots = 1;
+    public int SteakPriceOffset = 0;
     public int UnlockPrice = 0;
     public List<RaceDetails> Details = new List<RaceDetails>();
     public SceneType Scene;

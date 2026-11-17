@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,16 +19,18 @@ public class MoreSteakButton : MonoBehaviour
     public void BuySteakSlot()
     {
         PersistentData.Instance.Money -= _cost;
-        PersistentData.Instance.SteakSlots++;
+        PersistentData.Instance.GetSelectedLevel().SteakSlots++;
         CalculateCost();
         _wager.UpdateSteakCounter();
     }
 
     private void CalculateCost()
     {
-        if (PersistentData.Instance.SteakSlots < PersistentData.MaxSteakSlots)
+        LevelDetails level = PersistentData.Instance.GetSelectedLevel();
+
+        if (level.SteakSlots < PersistentData.MaxSteakSlots)
         {
-            _cost = Prices.SteakSlot(PersistentData.Instance.SteakSlots);
+            _cost = Prices.Level(level.SteakSlots + level.SteakPriceOffset);
             UpdateButton();
         }
         else
