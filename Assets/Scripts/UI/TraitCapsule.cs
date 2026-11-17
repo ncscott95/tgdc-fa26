@@ -7,6 +7,7 @@ public class TraitCapsule : MonoBehaviour
     [SerializeField] private Image _capsule;
     [SerializeField] private Image _icon;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _boringText;
 
     public void SetTrait(Trait trait)
     {
@@ -16,6 +17,7 @@ public class TraitCapsule : MonoBehaviour
 
         _icon.gameObject.SetActive(true);
         _text.gameObject.SetActive(true);
+        _boringText.gameObject.SetActive(false);
     }
 
     public void SetEmpty()
@@ -23,5 +25,6 @@ public class TraitCapsule : MonoBehaviour
         _capsule.color = Color.white;
         _icon.gameObject.SetActive(false);
         _text.gameObject.SetActive(false);
+        _boringText.gameObject.SetActive(true);
     }
 }

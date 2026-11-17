@@ -27,6 +27,7 @@ public class LevelButton :
         _locked = levelDetails.Locked;
         _unlockText.text = $"${levelDetails.UnlockPrice}";
         SetLocked(_locked);
+        _previewImage.sprite = levelDetails.Thumbnail;
 
         List<RaceDetails> raceDetails = levelDetails.Details;
         bool bronze = raceDetails[0].MedalEarned;

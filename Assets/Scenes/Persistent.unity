@@ -149,7 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentData
   Levels:
-  - Race: 
+  - Race: Pachinko 1
+    Description: 'Classic meat-pachinko. Drop your mis-steaks and watch them squish against the pegs to see which of these rancid racers splats to the ground first. '
+    Thumbnail: {fileID: 0}
     Locked: 0
     UnlockPrice: 0
     Details:
@@ -163,7 +165,9 @@ MonoBehaviour:
       MaxWager: 2500
       MedalEarned: 0
     Scene: 3
-  - Race: 
+  - Race: Pachinko 2
+    Description: 'Meat-pachinko, with a twist. Tumbling windmills knock these acrid athletes off their game, slapping them silly as they plummet to the finish. '
+    Thumbnail: {fileID: 0}
     Locked: 1
     UnlockPrice: 5000
     Details:
@@ -177,7 +181,9 @@ MonoBehaviour:
       MaxWager: 250000
       MedalEarned: 0
     Scene: 4
-  - Race: 
+  - Race: Pachinko 3
+    Description: "Ultimate meat-pachinko: the final showdown. Malicious meat tenderizers seek to make your juicy jousters into Sunday\u2019s lunch. Dodge the heat of the grill and claim your clammy championship title in the final chapter of mis-steaks. "
+    Thumbnail: {fileID: 0}
     Locked: 1
     UnlockPrice: 500000
     Details:

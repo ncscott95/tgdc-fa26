@@ -6,14 +6,14 @@ public class Popup : MonoBehaviour
     [SerializeField] private Transform _popupWindow;
     private const float POPUP_SPEED = 0.25f;
 
-    public void Show()
+    public virtual void Show()
     {
         StopAllCoroutines();
         gameObject.SetActive(true);
         StartCoroutine(ShowRoutine());
     }
 
-    public void Hide()
+    public virtual void Hide()
     {
         if (!gameObject.activeInHierarchy) return;
 
