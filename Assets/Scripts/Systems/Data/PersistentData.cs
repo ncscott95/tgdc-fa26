@@ -13,7 +13,8 @@ public class PersistentData : Singleton<PersistentData>
     public List<SteakData> SelectedSteaks = new List<SteakData>();
     public event Action<int> OnMoneyChanged;
     public event Action OnSteaksChanged;
-    public int CurrentWager;
+    public int WagerWinAmount;
+    public int WagerLoseAmount;
 
     public void SaveSteak(SteakData steakData)
     {

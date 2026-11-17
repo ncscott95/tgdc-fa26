@@ -18,8 +18,6 @@ public class EnterRaceButton : MonoBehaviour
             PersistentData.Instance.SelectedSteaks.Add(steak.Data);
         }
 
-        PersistentData.Instance.CurrentWager = _wager.GetWagerAmount();
-
         SceneLoader.Instance.ChangeScene(PersistentData.Instance.GetSelectedLevel().Scene);
     }
 }

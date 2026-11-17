@@ -20,18 +20,7 @@ public class WagerManager : MonoBehaviour
     void Start()
     {
         PersistentData.Instance.SelectedSteaks.Clear();
-        int maxWager = PersistentData.Instance.GetSelectedRace().MaxWager;
-        _wagerLevel = 0;
-        _maxWagerText.text = $"max: ${maxWager}";
-
-        while (Prices.Level(_wagerLevel) < PersistentData.Instance.Money && Prices.Level(_wagerLevel) <= maxWager)
-        {
-            _wagerLevel++;
-        }
-
-        _wagerLevel--;
-        UpdateWager();
-        UpdateSteakCounter();
+        RecalculateWager();
     }
 
     public void IncreaseWager()
@@ -68,13 +57,31 @@ public class WagerManager : MonoBehaviour
         UpdateRewards(wagerCost);
     }
 
+    public void RecalculateWager()
+    {
+        int maxWager = PersistentData.Instance.GetSelectedRace().MaxWager;
+        _wagerLevel = 0;
+        _maxWagerText.text = $"max: ${maxWager}";
+
+        while (Prices.Level(_wagerLevel) < PersistentData.Instance.Money && Prices.Level(_wagerLevel) <= maxWager)
+        {
+            _wagerLevel++;
+        }
+
+        _wagerLevel--;
+        UpdateWager();
+        UpdateSteakCounter();
+    }
+
     private void UpdateRewards(int wagerCost)
     {
         int money = PersistentData.Instance.Money;
         int numOpponents = PersistentData.Instance.GetSelectedRace().NumOpponents;
-        int winAmount = money + (wagerCost * (numOpponents + 2));
+        int winAmount = money + (wagerCost * numOpponents * 2);
         int loseAmount = money - wagerCost;
         if (wagerCost == 0) winAmount = money + 15;
+        PersistentData.Instance.WagerWinAmount = winAmount;
+        PersistentData.Instance.WagerLoseAmount = loseAmount;
 
         _winText.text = $"{money} -> <color=#008000ff>{winAmount}</color>";
         _loseText.text = $"{money} -> <color=red>{loseAmount}</color>";

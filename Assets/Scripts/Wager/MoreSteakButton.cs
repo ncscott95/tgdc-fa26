@@ -21,6 +21,7 @@ public class MoreSteakButton : MonoBehaviour
         PersistentData.Instance.GetSelectedLevel().SteakSlots++;
         CalculateCost();
         _wager.UpdateSteakCounter();
+        _wager.RecalculateWager();
     }
 
     private void CalculateCost()

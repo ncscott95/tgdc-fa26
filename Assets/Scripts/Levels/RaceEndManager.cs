@@ -25,16 +25,16 @@ public class RaceEndManager : MonoBehaviour
         
         RaceDetails race = PersistentData.Instance.GetSelectedRace();
 
-        int outcome = PersistentData.Instance.Money;
-        string color = "";
+        int outcome;
+        string color;
         if (playerWin)
         {
-            outcome += PersistentData.Instance.CurrentWager * (race.NumOpponents + 2);
+            outcome = PersistentData.Instance.WagerWinAmount;
             color = "#008000ff";
         }
         else
         {
-            outcome -= PersistentData.Instance.CurrentWager;
+            outcome = PersistentData.Instance.WagerLoseAmount;
             color = "#ff0000ff";
         }
 
