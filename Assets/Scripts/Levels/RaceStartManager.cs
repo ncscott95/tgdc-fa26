@@ -11,6 +11,7 @@ public class RaceStartManager : MonoBehaviour
     [SerializeField] private Sprite _platformUpSprite;
     [SerializeField] private Sprite _platformDownSprite;
     [SerializeField] private RaceTrackingCamera _trackingCam;
+    [SerializeField] private RaceCountdown _countdown;
 
     private Collider2D _platformCollider;
     private SpriteRenderer _platformRenderer;
@@ -33,16 +34,13 @@ public class RaceStartManager : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        Debug.Log("3...");
-        yield return new WaitForSeconds(1);
-        Debug.Log("2...");
-        yield return new WaitForSeconds(1);
-        Debug.Log("1...");
-        yield return new WaitForSeconds(1);
-        Debug.Log("GO!!!");
+        _countdown.gameObject.SetActive(true);
+        yield return _countdown.DoCountdownCoroutine();
 
         _platformRenderer.sprite = _platformDownSprite;
         _platformCollider.enabled = false;
+
+        StartCoroutine(_countdown.HideGoCoroutine());
     }
 
     private IEnumerator SpawnRacers()

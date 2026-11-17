@@ -31,12 +31,14 @@ public class NewSteakButton : MonoBehaviour
     {
         PersistentData.Instance.Money -= _cost;
         _latestSteak = _steakGenerator.GenerateMeat(true);
+        _buttonText.text = "making your mis-steak...";
         StartCoroutine(NamingPopupCoroutine());
     }
 
     public void NewCombinedSteak(SteakData combinedData)
     {
         _latestSteak = _steakGenerator.GenerateMeat(combinedData, true);
+        _buttonText.text = "merging your mis-steaks...";
         StartCoroutine(NamingPopupCoroutine());
     }
 
@@ -44,7 +46,6 @@ public class NewSteakButton : MonoBehaviour
     {
         _button.interactable = false;
         _buttonText.color = Color.gray;
-        _buttonText.text = "merging your mis-steaks...";
         _interactions.SetDisabled(true);
 
         _levelSelectButton.interactable = false;
