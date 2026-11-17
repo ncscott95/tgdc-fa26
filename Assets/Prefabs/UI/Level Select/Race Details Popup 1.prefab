@@ -789,6 +789,14 @@ PrefabInstance:
       propertyPath: _otherDifficulty2
       value: 
       objectReference: {fileID: 8661977859527395185}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _selectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2c6912b060aa74b991d92c33cbec0e, type: 3}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _unselectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84c9c184d2ceef04c922d1b03b3e8c0f, type: 3}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption
@@ -963,6 +971,14 @@ PrefabInstance:
       propertyPath: _otherDifficulty2
       value: 
       objectReference: {fileID: 8661977859527395185}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _selectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2c6912b060aa74b991d92c33cbec0e, type: 3}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _unselectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84c9c184d2ceef04c922d1b03b3e8c0f, type: 3}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption (1)
@@ -1360,6 +1376,14 @@ PrefabInstance:
       propertyPath: _otherDifficulty2
       value: 
       objectReference: {fileID: 7196357383063845342}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _selectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2c6912b060aa74b991d92c33cbec0e, type: 3}
+    - target: {fileID: 2617039694113297686, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
+      propertyPath: _unselectedButtonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84c9c184d2ceef04c922d1b03b3e8c0f, type: 3}
     - target: {fileID: 4937694962560442840, guid: 7382951afa327ed40a37c3b5046517dd, type: 3}
       propertyPath: m_Name
       value: DifficultyOption (2)
